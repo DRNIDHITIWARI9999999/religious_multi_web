@@ -1,0 +1,2349 @@
+﻿
+
+<html>
+<head>
+  <link rel=\"manifest\" href=\"/sbbp/manifest.json\">
+  <base href=\"/sbbp/\">
+    <title>Determine Click Position on click of a table cell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" type='text/css'>
+    </head>
+    <body >
+        <br> 
+
+        <h> <p> GAN GANPATYE NAMAH </p> </h>
+        <a> <p> SHREE BATTEESA YANTRA </p> </a>
+        <!--CSS -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type='text/css'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" type='text/css'>
+        <style>
+      
+            tbody {
+                border: 1px solid blue;
+                background-image: url('images/tenor.gif');
+                background-position: center;
+                color: Blue;
+                margin-top: 50%;
+                margin-bottom: 50%;
+            }
+            body {
+                background-color: powderblue;
+            }
+            td {
+                cursor: pointer;
+                background: -moz-linear-gradient(top, #ffffff, #D1E3E9);
+                background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#D1E3E9));
+                text-align: center;
+                min-width: 1vw;
+                height: 100%;
+                opacity: 01;
+            }
+
+            table {
+                width: 90%;
+              
+            }
+
+            h {
+                text-align: center;
+                color: Blue;
+            }
+
+            a {
+                text-align: center;
+                color: Blue;
+            }
+
+            td {
+                cursor: pointer;
+                background: -moz-linear-gradient(top, #ffffff, #D1E3E9);
+                background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#D1E3E9));
+                text-align: center;
+                width: 22.5%;
+                position: relative;
+                padding-top: 5.625%;
+               
+            }
+
+                td:after {
+                    content: '';
+                    display: block;
+                    margin-top: 25%;
+                }
+
+                td:hover {
+                    background: -moz-linear-gradient(top, #249ee4, #057cc0);
+                    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#249ee4), to(#057cc0));
+                }
+
+                td:active {
+                    background: -moz-linear-gradient(top, #057cc0, #249ee4);
+                    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#057cc0), to(#249ee4));
+                }
+
+            #result {
+                font-weight: bold;
+                font-size: 16pt;
+                text-align: justified;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 52px;
+                border: 3px;
+            }
+        </style>   <!-- Sidebar/menu -->
+        <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-Medium" style="z-index:3;width:10%; min-width:100px; font-weight:bold;opacity:1;" id="mySidebar">
+            <br>
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%; font-size: calc(0.75em + 1vmin);">CLOSE</a>
+            <div class="w3-container">
+                <h3 class="w3-padding-32 w3-medium font-size: calc(0.75em + 1vmin);"><b>Shree Bhairav Baba Prashnavali</b></h3>
+            </div>
+            <div class="w3-bar-block ">
+                <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+                <a href="new1.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Questions</a>
+                <a href="table3202.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Shree Batteesa Yantra</a>
+                <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a>
+                <a href="How.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">How To</a>
+                <!--  <a href="Support.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Support Us</a> -->
+                <a href="Contac.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Top menu on small screens -->
+        <header class="w3-container w3-top w3-hide-large w3-blue w3-Medium">
+            <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">☰</a>
+            <span>SHREE BHAIRAV BABA PRASHNAVALI</span>
+        </header>
+
+        <!-- Overlay effect when opening sidebar on small screens -->
+        <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+        <!-- !PAGE CONTENT! -->
+        <div id="main">
+
+            <div class="w3-main" style="margin-left:340px;margin-right:40px;margin-top:25px;">
+                <div class="w3-row-padding">
+                    <div class="w3-half" style="margin-top:34px;">
+                        <!--img src="images/01.jpg" style="width:100%" onclick="onClick(this)" alt "JAI SHREE RAM " /!-->
+                    </div>
+                </div>
+            </div>
+            </div><script>
+        $(document).ready(function () {
+                    var maxHeight = null;
+            $('#myTable tr').each(function () {
+                var thisHeight = $(this).height();
+                if (maxHeight == null || thisHeight > maxHeight) maxHeight = thisHeight;
+            }).height(maxHeight);
+
+            var maxWidth = null;
+            $('#myTable td').each(function () {
+                var thisWidth = $(this).width();
+                if (maxWidth == null || thisWidth > maxWidth) maxWidth = thisWidth;
+            }).width(maxWidth);
+
+            $("#myTable td").click(function () {
+                var column_num = parseInt($(this).index()) + 1;
+                var row_num = parseInt($(this).parent().index()) + 1;
+              
+
+            </script>
+
+
+                     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+            
+            <script type="text/javascript" src="Toast.js"></script>
+
+            <script>
+            </script>
+            <!--JAVASCRIPT -->
+            <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+            <script>
+    $(document).ready(function(){
+        $("#myTable td").click(function() {
+ var cell_Value = ($(this).text());
+ var card_Value =    sessionStorage.getItem("cardvalue");
+ var column_num = parseInt($(this).index()) + 1;
+            var row_num = parseInt($(this).parent().index()) + 1;
+ $("table").hide();
+ //		$("a").hide();
+ document.getElementById("result").innerHTML = sessionStorage.getItem("cardvalue");
+           // $("#result").html( "Row_num =" + row_num + "  ,  Column_num ="+ column_num  +  "card value = " + sessionStorage.getItem("cardvalue") + cell_Value);
+if (card_Value==1){
+switch (cell_Value)
+{
+case "1":
+//{
+$("#result").html("Your deity is Shri Bhairav Baba and Battisa Yantra number 1, you will get the happiness of child.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Shiva and Battisa Yantra number 2, will get children by worshiping the deity of the house .");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Krishna and Battisa Yantra number 3, will get children but after lot of efforts.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Ram and Battisa Yantra number 4, you will get the happiness of child.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Sita and Battisa Yantra number 5, should perform Putreshti Yagya to get the happiness of child.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Radha and Battisa Yantra number 6, will get child happiness soon.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Lakshmi and Battisa Yantra number 7, you will get the happiness of child very soon.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Vishnu and Battisa Yantra number 8, should perform the ritual of Santana Gopal for getting the happiness of child.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Narayan and Battisa yantra number 9, have patience, you will get the happiness of child with delaywill be delayed, be patient.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Damodar and Battisa Yantra number 10, will get child happiness with delay. ");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Indra and Battisa Yantra number 11, will get children but after lot of efforts.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Ganesha and Battisa Yantra number 12, will get happiness of children.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Agni and Battisa yantra number 13, will get happiness of children.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Vayu and Battisa Yantra number 14, perform the ritual of Santan Gopal to get happiness of children.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Varun and Battisa Yantra number 15, chances of getting child are very slim.");
+break;
+
+default:
+$("#result").html("how");
+}} else if (card_Value==2){
+switch (cell_Value)
+{
+case "1":
+//$("#result").html("please try");}//}case "1":
+//{
+$("#result").html("Your deity is Shiva and Battisa Yantra number 1, will be victorious in the case.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Krishna and Battisa Yantra number 2, victory is in doubt.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Ram and Battisa Yantra number 3, chances of losing are more or you will have to compromise.");
+break;
+case "4":
+//{
+$("#result").html("your deity is sita and battisa yantra number 4, don't worry you will win the case.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Radha and Battisa Yantra number 5, its unlikely to win the case.");
+break;
+case "6":
+//{
+$("#result").html("your deity is lakshmi and battisa yantra number 6, victory is difficult.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Vishnu and your battisa number is 7, you will win the case.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Narayan and Battisa Yantra number 8, your victory is doubtful.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Damodar and Battisa Yantra number 9, you will surely win the case.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Indra and Battisa Yantra number 10, chances of winning the case are slim.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Ganesha and Battisa Yantra number 11, chances of losing the case are more.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Agni and Battisa Yantra number 12, its difficult to win this case.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Vayu and Battisa Yantra number 13, you will win the case.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Varuna and Battisa Yantra number 14, its difficult to win this case.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Yama and Battisa Yantra number 15, chat the Bagulamukhi Mantra, you will surely win the case.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==3){switch (cell_Value)
+{ 	case "1":
+//{
+$("#result").html("Your deity is Krishna and Battisa Yantra number 1, good times are about to start.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Ram and Battisa Yantra number 2, there is time in getting lucky.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Sita and Battisa Yantra number 3 , there is time in getting lucky.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Radha and Battisa Yantra number 4, good times are about to start.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Lakshmi and Battisa Yantra number 5, good times are about to start.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Vishnu and Battisa Yantra number 6, keep patience you will get lucky soon.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Narayan and Battisa Yantra number 7, golden times are about to start.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Damodar and Battisa Yantra number 8, will get lucky soon.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Indra and Battisa Yantra number 9, will get lucky soon.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Ganesha and Battisa Yantra number 10, good times are about to start.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Agni and Battisa Yantra number 11, will get lucky soon.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Vayu and Battisa Yantra number 12, golden times are about to start.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Varuna and Battisa Yantra number 13, have patience.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Yama and Battisa Yantra number 14, will get lucky soon.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Kuber and Battisa Yantra number 15, chant Swarnakarshan Bhairav ​​Mantra to get lucky.");
+break;
+default:
+$("#result").html("how");
+}}
+else if (card_Value==4){switch (cell_Value)
+{ case "1":
+//{
+$("#result").html("Your deity is Ram and Battisa Yantra number 1, will get job soon.");
+break;
+case "2":
+//{
+$("#result").html("your deity is sita and battisa yantra number 2, will get job with lot of effort.");
+break;
+case "3":
+//{
+$("#result").html("your deity is radha and battisa yantra number 3, will face trouble in getting job.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Lakshmi and Battisa Yantra number 4, will get the job after working tirelessly.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Vishnu and Battisa Yantra number 5, there is delay in getting the job.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Narayan and Battisa Yantra number 6, will get the job soon.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Damodar and Battisa Yantra number 7, there is delay in getting the job.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Indra and Battisa Yantra number 8, chances are less of getting job.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Ganesha and Battisa Yantra number 9, will get the job.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Agni and Battisa Yantra number 10, its unlikely to get job in near future.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Vayu and Battisa Yantra number 11, its unlikely to get job in near future.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Varun and Battisa Yantra number 12, will get job soon.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Yama and Battisa Yantra number 13, chances of getting job are very less.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Kuber and Battisa Yantra number 14, will get the job soon.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is sun and battisa yantra number 15, will get the job with delay.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==5){switch (cell_Value)
+{case "1":
+//{
+$("#result").html("Your deity is Sita and Battisa Yantra number 1, time has come for the advancement in career.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Radha and Battisa Yantra number 2, have patience, it will take some time to get promotion. ");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Lakshmi and Battisa Yantra number 3, promotion is unlikely.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Vishnu and Battisa Yantra number 4, time has come for advancement in career.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Narayan and Battisa Yantra number 5, its unlikely to get promotion in the near future.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Damodar and Battisa Yantra number 6, conditions are favourable for promotion.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Indra and Battisa Yantra number 7, promotion is doubtful.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Ganesh and Battisa Yantra number 8, there is time in promotion.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Agni and Battisa Yantra Number 9, at the moment promotion is difficult.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Vayu and Battisa Yantra number 10, have patience, promotion will take time.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Varuna and Battisa Yantra number 11, promotion is knocking on your door.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Yama and Battisa Yantra number 12, getting promotion is difficult at the moment.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Kuber and Battisa Yantra number 13, highly unlikely to get promotion at the moment.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is the Sun and Battisa Yantra number 14, you need to take lot of efforts to get promotion.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is the moon and Battisa yantra number 15, the chances of progress are weak.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==6){switch (cell_Value) {case "1":
+//{
+$("#result").html("Your deity is Radha and Battisa Yantra number 1, will benefit from farming.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Lakshmi and Battisa Yantra number 2, farming will not be much profitable.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Vishnu and Battisa Yantra number 3, chances of making gain in farming are remote.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Narayan and Battisa Yantra number 4, you will get benefited ny farming.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Damodar and Battisa Yantra number 5, expect little profit from farming.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Indra and Battisa Yantra number 6, will not benefit from farming.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Ganesha and Battisa Yantra number 7, will benefit from farming.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Agni and Battisa Yantra number 8, will benefit from farming.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Vayu and Battisa Yantra number 9, farming is expected to be profitable.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Varuna and Battisa Yantra number 10, is unfounded to expect profit from farming.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Yama and Battisa Yantra number 11, it is doubtful that there will be profit from farming.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Kuber and Battisa Yantra number 12, will not benefit from farming.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Sun and Battisa Yantra number 13, will benefit from farming.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is moon and Battisa yantra number 14, will not get much benefit from farming.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Mars and Battisa Yantra number 15, farming will be beneficial.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==7){switch (cell_Value) {case "1":
+//{
+$("#result").html("Your deity is Lakshmi and Battisa Yantra number 1, wish of own house will be fulfilled.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Vishnu and Battisa Yantra number 2, house will not be built in near future.");
+break;
+case "3":
+//{
+$("#result").html(" Your deity is Narayan and Battisa Yantra No. 3, house will not be built.");
+break;
+case "4":
+//{
+$("#result").html(" Your deity is Damodar and Battisa Yantra No. 4, desire to build a house will not be fulfilled");
+break;
+case "5":
+//{
+$("#result").html(" Your deity is Indra and Battisa Yantra number 5, house will not be built in the near future.");
+break;
+case "6":
+//{
+$("#result").html(" Your deity is Ganesh and Battisa Yantra number 6, house will be built soon.");
+break;
+case "7":
+//{
+$("#result").html(" Your deity is Agni and Battisa Yantra number 7, house will be built soon.");
+break;
+case "8":
+//{
+$("#result").html(" Your deity is Vayu and Battisa Yantra number 8, will face difficulties in building a house.");
+break;
+case "9":
+//{
+$("#result").html(" Your deity is Varuna and Battisa Yantra number 9, will own the house");
+break;
+case "10":
+//{
+$("#result").html(" Your deity is Yama and Battisa Yantra number 10, will take time in building a house.");
+break;
+case "11":
+//{
+$("#result").html(" Your deity is Kuber and Battisa Yantra number 11, house will not be built in the near future.");
+break;
+case "12":
+//{
+$("#result").html(" Your deity is Sun and Battisa Yantra number 12, its doubtful that you will own a house.");
+break;
+case "13":
+//{
+$("#result").html(" Your deity is moon and Battisa yantra number 13, you will own the house.");
+break;
+case "14":
+//{
+$("#result").html(" Your deity is Mars and Battisa Yantra number 14, house will not be built in the near future.");
+break;
+case "15":
+//{
+$("#result").html(" Your deity is Mercury and Battisa Yantra number 15, house will be built with lot of obstacles.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==8){switch (cell_Value) {
+
+case "1":
+//{
+$("#result").html(" Your deity is Vishnu, Your battisa number is 1, you will get success in exam.");
+break;
+case "2":
+//{
+$("#result").html(" Your deity is Narayan and Battisa Yantra number 2, there is a doubt in passing the examination.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Damodar and Battisa Yantra number 3, there are chances of failure in exam.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Indra and Battisa Yantra number 4, will pass the exam.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Ganesha and Battisa Yantra number 5, there is no chance of passing the exam.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Agni and Battisa Yantra No. 6, you will pass the exam.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Vayu and Battisa Yantra No.7, it is difficult to pass in exam.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Varun and Battisa Yantra number 8, chant Gayatri Mantra to pass the exam.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Yama and Battisa Yantra number 9, will pass the exam.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Kuber and Battisa Yantra number 10, worship Saraswati to pass.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Sun and Battisa Yantra number 11 there is doubt in passing in exam, study diligently.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is the moon and Battisa Yants no 12, will pass the exam");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Mars and Battisa Yantra number 13, it is difficult to pass.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Mercury and Battisa Yantra number 14, to pass study diligently and chant Hanumantra.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Jupiter and to pass Battisa Yantra number 15, study diligently and chant Hanumantra.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==9){switch (cell_Value) {case "1":
+//{
+$("#result").html(" Your deity is Narayan and Battisa Yantra number 1, have faith, you will get higher education.");
+break;
+case "2":
+//{
+$("#result").html(" Your deity is Damodar and Battisa Yantra number 2, chances of getting higher education are slim.");
+break;
+case "3":
+//{
+$("#result").html(" Your deity is Indra and Battisa Yantra number 3, you get higher education.");
+break;
+case "4":
+//{
+$("#result").html(" Your deity is Ganesha and Battisa Yantra number 4, will achieve higher education.");
+break;
+case "5":
+//{
+$("#result").html(" Your deity is Agni and Battisa Yantra number 5, will attain higher education.");
+break;
+case "6":
+//{
+$("#result").html(" Your deity is Vayu and Battisa Yantra number 6, will get higher education, do Shivarchan.");
+break;
+case "7":
+//{
+$("#result").html(" Your deity is Varuna and Battisa Yantra number 7, will have to face obstacles in attaining higher education.");
+break;
+case "8":
+//{
+$("#result").html(" Your deity is Yama and Battisa Yantra number 8, chant Gayatri Mantra to attain higher education.");
+break;
+case "9":
+//{
+$("#result").html(" Your deity is Kubera and Battisa Yantra number 9, will attain higher education.");
+break;
+case "10":
+//{
+$("#result").html(" Your deity is the Sun and Battisa Yantra number 10, will not be able to attain higher education.");
+break;
+case "11":
+//{
+$("#result").html(" Your deity is moon and battisa yantra number 11, will have to work hard to attain education.");
+break;
+case "12":
+//{
+$("#result").html(" Your deity is Mars and Battisa Yantra number 12, will attain higher education.");
+break;
+case "13":
+//{
+$("#result").html(" Your deity is Mercury and Battisa Yantra number 13, chances of attaining higher education are less.");
+break;
+case "14":
+//{
+$("#result").html(" Your deity is Jupiter and Battisa Yantra number 14, will get higher education, don't worry.");
+break;
+case "15":
+//{
+$("#result").html(" Your deity is shubh and Battisa Yantra number 15, worship Gayatri for attainment of knowledge.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==10){switch (cell_Value) {case "1":
+//{
+$("#result").html("Your deity is Damodar, Your battisa number is 1, you will live your life pleasantly.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Indra, Your battisa number is 2, there are possibilities to get success in life.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Ganesha and Battisa Yantra number 3, will get success in life.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Agni and Battisa Yantra number 4, will get success in life.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Vayu and Battisa Yantra number 5, getting success in life is doubtful.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Varuna and Battisa Yantra number 6, little chances of more success in life.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Yama and Battisa Yantra Number 7, will not get success in life.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Kuber and Battisa Yantra number 8, will get success in life.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Sun and Battisa Yantra number 9, will be successful only after lot of efforts.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is moon and battisa yantra number 10, will not get success in life.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Mars and Battisa Yantra number 11, will get success in life after hardship.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Mercury and Battisa Yantra number 12, it is impossible to achieve success in life.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Brahaspati, Your battisa number is 13, there are indications to get success in life.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Shubh and Battisa Yantra Number 14, is difficult to get success in life.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Shani and Battisa Yantra number 15, will get good success in life.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==11){switch (cell_Value) {case "1":
+//{
+$("#result").html(" Your deity is Indra and Battisa Yantra No. 1, will get unexpected wealth.");
+break;
+case "2":
+//{
+$("#result").html(" Your deity is Ganesha and Battisa Yantra No. 2, easy money is not in your luck.");
+break;
+case "3":
+//{
+$("#result").html(" Your deity is Agni and Battisa yantra number 3, will get unexpected wealth, worship the Griha deity.");
+break;
+case "4":
+//{
+$("#result").html(" Your deity is Vayu and Battisa Yantra number 4, is likely to get sudden wealth.");
+break;
+case "5":
+//{
+$("#result").html(" Your deity is Varuna and Battisa Yantra number 5, will get unexpected wealth.");
+break;
+case "6":
+//{
+$("#result").html(" Your deity is Yama and Battisa yantra number 6, will get the easy money.");
+break;
+case "7":
+//{
+$("#result").html(" Your deity is Kuber and Battisa Yantra number 7, should do tantrik siddhi for getting easy money .");
+break;
+case "8":
+//{
+$("#result").html(" Your deity is Sun and Battisa Yantra number 8, easy money is not in your luck.");
+break;
+case "9":
+//{
+$("#result").html(" Your deity is moon and Battisa yantra number 9, will get sudden wealth, if you worship Pitra Dev.");
+break;
+case "10":
+//{
+$("#result").html(" Your deity is Mars and Battisa Yantra number 10, is doubtful that you will get hidden wealth.");
+break;
+case "11":
+//{
+$("#result").html(" Your deity is Mercury and Battisa Yantra number 11, will get the hidden wealth.");
+break;
+case "12":
+//{
+$("#result").html(" Your deity is Jupiter and Battisa Yantra number 12, will get hidden wealth.");
+break;
+case "13":
+//{
+$("#result").html(" Your deity is Shubh and Battisa Yantra number 13, will get hidden wealth very soon.");
+break;
+case "14":
+//{
+$("#result").html(" Your deity is Shani and Battisa Yantra number 14, will not easy.");
+break;
+case "15":
+//{
+$("#result").html(" Your deity is Rahu and Battisa Yantra number 15, will be earned by worshiping the Gusrding Angel.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==12){switch (cell_Value) {case "1":
+//{
+$("#result").html(" Your deity is Ganesha and Battisa Yantra number 1, will get married don't worry.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Agni and Battisa Yantra number 2, will face many kinds of obstacles in marriage, keep the fast of Mangala Gauri.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Vayu and Battisa Yantra Number 3, need to take efforts to get married.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Varuna and Battisa Yantra number 4, will get married don't worry");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Yama and Battisa Yantra number 5, recite Mangla Gauri for marriage.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Kuber and Battisa Yantra number 6, you are not likely to get married.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Sun and Battisa Yantra number 7, marriage should happen soon.");
+break;
+case "8":
+//{
+$("#result").html("your deity is moon and Battisa Yantra number 8, perform the Viswasumantra ritual for marriage.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Mars and Battisa Yantra number 9, marriage will be delayed.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Mercury and Battisa Yantra number 10, will get married.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Jupiter and Battisa Yantra number 11, marriage will be delayed.");
+break;
+case "12":
+//{
+$("#result").html("Your deitiy is Shubh and Battisa Yantra number 12, should take measures for marriage.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Shani and Battisa Yantra number 13, will get married don't worry.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Rahu and Battisa Yantra number 14, will get married but by efforts.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Ketu and Battisa Yantra number 15, it is possible to get married after efforts.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==13){switch (cell_Value) {case "1":
+//{
+$("#result").html("Your deity is Agni and Battisa Yantra number 1, patient will get well.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Vayu and Battisa Yantra number 2, there is time in the patient's recovery.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Varuna and Battisa Yantra number 3, patient will not get well.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Yama and Battisa Yantra number 4, ill will get well.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Kuber and Battisa Yantra Number 5, ill is less likely to get well.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Sun and Battisa Yantra number 6, patient will get well soon.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is moon and Battisa Yantra number 7, patient will recover.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Mars and Battisa Yantra number 8, patient is not likely to get well.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Mercury and Battisa Yantra number 9, ill will get well.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Jupiter and Battisa Yantra number 10, will not get well.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Shubh and Battisa Yantra number 11, patient will get disease free.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Shani and Battisa Yantra number 12, chances of getting well are very less.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Rahu and Battisa Yantra number 13, it is doubtful, patient get well.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Ketu and Battisa Yantra number 14, patient will be disease free.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Mitra and Battisa Yantra number 15, it is doubtful that patient get well.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==14){switch (cell_Value) {
+case "1":
+//{
+$("#result").html("Your deity is Vayu and Battisa Yantra number 1, dream is auspicious.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Varuna and Battisa Yantra number 2, dream is not auspicious.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Yama and Battisa Yantra number 3, dream is auspicious.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Kuber and Battisa Yantra number 4, dream is auspicious.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is the Sun and Battisa Yantra number 5, dream is not auspicious.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is the moon and Battisa Yantra number 6, dream is not auspicious.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Mars and Battisa Yantra number 7, dream is auspicious.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Mercury and Battisa Yantra number 8, the dream is not specifically auspicious or inauspicious.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Jupiter and Battisa Yantra number 9, dream is inauspicious.");
+break;
+case "10":
+//{
+$("#result").html("Your deityis Shubh and Battisa Yantra number 10, dream results is Shubh.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Shani and Battisa Yantra number 11, dream results are not good.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Rahu and Battisa Yantra number 12, results of the dream is auspicious.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Ketu and Battisa Yantra number 13, dream result is not auspicious.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Mitra and Battisa Yantra number 14, dream is auspicious.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Prithvi and Battisa Yantra number 15, dream is auspicious.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==15){switch (cell_Value) {
+
+case "1":
+//{
+$("#result").html("Your deity is Varuna and Battisa Yantra number 1, transfer will happen soon");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Yama and Battisa Yantra number 2, transfer is expected soon.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Kuber and Battisa Yantra number 3, transfer will not happen now.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Sun and Battisa Yantra number 4, will get transferred.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is moon and Battisa yantra number 5, tranfer will happen but it wll get cancelled.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Mars and Battisa Yantra number 6, will not get transferred");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Mercury and Battisa Yantra number 7, will be transferred.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Jupiter and Battisa Yantra number 8, will get transferred, be assured.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Shubh and Battisa Yantra number 9, transfer will happen soon.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Shani and Battisa Yantra number 10, you can get transferred only after efforts.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Rahu and Battisa Yantra number 11, will get transferred.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Ketu and Battisa Yantra number 12, will not be transferred.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Mitra and Battisa Yantra number 13, will be transferred.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Prithvi and Battisa Yantra number 14, will not transferred.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Kaal and Battisa Yantra number 15, will be transferred.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==16){switch (cell_Value) {case "1":
+//{
+$("#result").html("Your deity is Yama and Battisa Yantra number 1, will get profit in business but caution is necessary.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Kuber and Battisa Yantra number 2, will get profit in business.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Sun and Battisa Yantra number 3, business will not bring profit.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is moon and Battisa Yantra number 4, business will be profitable.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Mars and Battisa Yantra number 5, loss is likely to happen in business.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Mercury and Battisa Yantra number 6, will benefit from business.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Jupiter and Battisa Yantra number 7, it is difficult to get profit in business.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Shubh and Battisa Yantra number 8, will be profitable in business.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Shani and Battisa Yantra number 9, business is likely to be profitable.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Rahu and Battisa Yantra number 10, business will be profitable.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Ketu and Battisa Yantra number 11, you are not likely to profit in business.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Mitra and Battisa Yantra number 12, will not benefit from business.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Prithvi and Battisa Yantra number 13, you are not likely get profit from business.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Kaal and Battisa Yantra number 14, will not benefit from business.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is remaining and Battisa Yantra number 15, business will be profitable.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==17){switch (cell_Value) {case "1":
+//{
+$("#result").html("Your deity is Kuber and Battisa Yantra number 1, worry will vanish.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is the Sun and Battisa Yantra Number 2, Anxiety will disappear soon");
+break;
+case "3":
+//{
+$("#result").html("Your deity is the moon and Battisa Yantra number 3, worries will disappear, worship God");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Mars and Battisa Yantra Number 4, Anxiety will go away soon");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Mercury and Battisa Yantra number 5, worries will not go away soon.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Jupiter and Battisa Yantra Number 6 Anxiety will go away");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Shubh and Battisa Yantra Number 7, Anxiety will not go away.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Shani and Battisa Yantra number 8, worries will vanish, do Shri Batuk BhVayuavarchan");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Rahu and Battisa Yantra Number 9 Anxiety will vanish");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Ketu and Battisa Yantra Number 10 Anxiety will not disappear now");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Mitra and Battisa Yantra Number 11 Anxiety will subside soon");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Prithvi and Battisa Yantra Number 12 Anxiety will not disappear now");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Kaal and Battisa Yantra Number 13 Anxiety will go away soon");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Shesh and Battisa Yantra number 14 worries will not go away now.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Yaksha and Battisa Yantra number 15 worries will disappear soon.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==18){switch (cell_Value) {case "1":
+//{
+$("#result").html("Your deity is Sun and Battisa Yantra number 1, friend can decieve, be careful");
+break;
+case "2":
+//{
+$("#result").html("Your deity is moon and Battisa Yantra number 2, friend will cheat, be careful");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Mars and Battisa Yantra number 3, friendship will not stay for long.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Mercury and Battisa Yantra number 4, will remain in friendship for long time.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Jupiter and Battisa Yantra number 5, compatibility is not there with your friend.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Shubh and Battisa Yantra number 6, relationship will be harmonious.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Shani and Battisa Yantra number 7, there is a possibility of a rift with the friend.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Rahu and Battisa Yantra number 8, friend can decieve, be careful.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Ketu and Battisa Yantra number 9, friend is insidious, so renounce him.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Mitra and Battisa Yantra number 10, will get along well with friends.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Prithvi and Battisa Yantra number 11, friendship is toxic.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Kaal and Battisa Yantra number 12, compatability issues are there.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Shrsh and Battisa Yantra number 13, will be in harmony with friend.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Yaksha and Battisa Yantra number 14, friendship will not stay for much time.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Takshak and Battisa Yantra number 15, friendship will remain there.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value=19){switch (cell_Value)
+
+{
+
+case "1":
+//{
+$("#result").html("Your deity is moon and Battisa Yantra No. 1, Obstacles will come in getting the loan.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Mars and Battisa Yantra number 2, will get the loan.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Mercury and Battisa Yantra number 3, loan will not be available at this time.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Jupiter and Battisa Yantra number 4, there is delay in getting the loan.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Shubh and Battisa Yantra number 5, will not get the loan");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Shani and Battisa Yantra number 6, will get the loan.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Rahu and Battisa Yantra number 7, will get loan");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Ketu and Battisa Yantra number 8, there is delay in getting the loan");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Mitra and Battisa Yantra number 9 will get loan with difficulty.");
+break;
+case "10":
+//{
+$("#result").html("Your god is Prathvi, Your battisa number is 10, will get loan with difficulty.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Kaal and Battisa Yantra number 11 there is delay in getting the loan");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Shesh and Battisa Yantra number 12 there is delay in getting the loan");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Yaksha and battisa yantra number 13 will get loan");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Takshak and Battisa Yantra number 14 there is doubt in getting loan");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Shri BhVayuav ​​and Battisa Yantra number 15 will face difficulty in getting loan.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==20){switch (cell_Value) {
+
+case "1":
+//{
+$("#result").html("Your deity is Mars and Battisa Yantra number 1 will find the lost item. Try");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Mercury and Battisa Yantra number 2 will find the lost item");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Jupiter and Battisa Yantra number 3 will not find the lost item");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Shubh and Battisa Yantra Number 4 Lost item will be found very soon");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Shani and Battisa Yantra number 5 can be found if you try.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Rahu and Battisa Yantra number 6 will get the destroyed item.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Ketu and Battisa Yantra number 7 chances of finding the lost item is very less.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Mitra and Battisa Yantra number 8 will not find the lost item");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Prithvi and Battisa Yantra number 9 lost things will not be found");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Kaal and Battisa Yantra Number 10 Lost Items will not be found soon");
+break;
+case "11":
+//{
+$("#result").html("YouThe deity is Shesh and Battisa Yantra number 11 it is difficult to find the lost item.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Yaksha and Battisa Yantra number 12 will find the lost item");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Takshak and Battisa Yantra number 13, it is not possible to find lost item");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Shri BhVayuav ​​and Battisa Yantra No. 14, Lost item will be found soon");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Shiva and Battisa Yantra number 15, destroyed item will not be found");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==21){switch (cell_Value) {case "1":
+//{
+$("#result").html("Your deity is Mercury and Battisa Yantra number 1, he will come back ");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Jupiter and Battisa Yantra number 2, chances of his coming back are very less");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Shubh and Battisa Yantra number 3, he will return soon");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Shani and Battisa Yantra number 4, he is not in the mood of returning back in near future");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Rahu and Battisa Yantra number 5 he will return soon");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Ketu and Battisa Yantra number 6 he is still hurt, will not come back ");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Mitra and Battisa yantra number 7 he will come back very soon.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Rahu and Battisa Yantra number 8, he will return soon");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Kaal and Battisa Yantra Number 9, chances of him coming back are less");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Ganesha and Battisa Yantra number 10, he will come back soon");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Yakshas and Battisa Yantra number 11, he is not planning to come back");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Takshak and Battisa Yantra number 12, its better to not wait for him");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Shri BhVayuav ​​and Battisa Yantra number 13 he will return soon");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Shiva and Battisa Yantra number 14 he is not willing to return in near future");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Krishna and Battisa Yantra number 15 don't worry he will return in a few days");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==22){switch (cell_Value) {
+
+
+
+
+
+
+
+
+case "1":
+//{
+$("#result").html("Your deity is Jupiter and Battisa Yantra number 1 journey will be beneficial.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Shubh and Battisa Yantra number 2 you will get benefit from the journey.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Shani and Battisa Yantra number 3 journey will be beneficial.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Rahu and Battisa Yantra number 4 will benefit from traveling.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Ketu and Battisa Yantra number 5 journey will not bring any benefit.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Mitra and Battisa Yantra number 6 the benefits of traveling will be moderate.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Prithvi and Battisa Yantra number 7 journey will not bring any benefit");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Kaal and Battisa Yantra number 8 it is impossible to get benefit from journey.");
+break;
+case "9":
+//{
+$("#result").html("Your deity are Shesh and Battisa Yantra number 9 journey will not benefit");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Yaksha and Battisa Yantra number 10 will benefit from travel.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Takshak and Battisa Yantra number 11 journey will not be beneficial.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Shri BhVayuav ​​and Battisa Yantra number 12, there is a high probability of loss in journey.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Shiva and Battisa Yantra number 13 journey will be beneficial.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Krishna and Battisa Yantra number 14 is difficult to get benefit in travel");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Ram and Battisa Yantra number 15 it will be beneficial to visit.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==23){switch (cell_Value) {
+
+
+	case "1":
+//{
+$("#result").html("Your deity is Shubh and Battisa Yantra number 1 will remain at loggerheads with brothers.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Shani and Battisa Yantra number 2, relation with brothers will be harmonious.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Rahu and Battisa Yantra number 3 relation withbrothers will not be harmonious.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Ketu and Battisa Yantra number 4 will be in love with brothers");
+break;
+case "5":
+//{
+$("#result").html("Your deityis Mitra and Battisa Yantra number 5 there will be disputes with brothers.");
+break;
+case "6":
+//{
+$("#result").html("Your deity are Prithvi and Battisa Yantra number 6 will be in harmony with brothers.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Kaal and Battisa Yantra number 7 will remain at loggerheads with brothers.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is remaining and Battisa Yantra number 8 it is difficult to have harmonious relation with");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Yaksha and Battisa Yantra number 9, will have a normal relationship with brothers.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Takshak and Battisa Yantra number 10, not have much harmony with brothers");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Shri BhVayuav ​​and Battisa Yantra number 11 love will remain between the brothers.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Shiva and Battisa Yantra number 12 there will be tension and rift with brothers.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Krishna and Battisa Yantra number 13, there will be quarrel with brothers");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Ram and Battisa Yantra number 14 will remain at loggerheads with brothers.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Sita and Battisa Yantra number 15 there will be harmony with brothers.");
+break;
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==24){switch (cell_Value) {
+
+
+case "1":
+//{
+$("#result").html("Your deity is Shani and Battisa Yantra number 1 there will not be any problem of water.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Rahu and Battisa Yantra number 2 there will not be any problem of water, be assured");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Ketu and Battisa Yantra number 3 there will be scarcity of water.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Mitra and Battisa Yantra number 4 there will not be any problem of water");
+break;
+
+case "5":
+//{
+$("#result").html("Your deity is Prithvi and Battisa Yantra number 5 there will be scarcity of water");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Kaal and Battisa Yantra number 6 there will not be any problem of water");
+break;
+case "7":
+//{
+$("#result").html("Your deity are Shesh and Battisa Yantra number 7 there will be sudden scarcity of water.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Yaksha and Battisa Yantra number 8, there will not be any problem of water.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Takshak and Battisa Yantra number 9 there will not be any problem of water");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Shri BhVayuav ​​and Battisa yantra number 10 there will be scarcity of water");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Shiva and Battisa Yantra number 11 there will not be any problem of water");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Krishna and Battisa Yantra number 12 there will be scarcity of water");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Ram and Battisa yantra number 13 there will not be any problem of water.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Sita and Battisa Yantra number 14 there will be scarcity of water.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Radha and Battisa Yantra number 15 there will not be any problem of water");
+break;
+
+
+default:
+$("#result").html("how");
+}}
+else if (card_Value==25){switch (cell_Value) {case "1":
+//{
+$("#result").html(" Your deity is Rahu and Battisa Yantra number 1 This year will be moderate.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Ketu and Battisa Yantra number 2 this year will be good");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Mitra and Battisa Yantra number 3 this year will be good");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Prithvi and Battisa Yantra number 4 this year will be good");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Kaal and Battisa Yantra number 5 this year will be medium .");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Shesh and Battisa Yantra number 6 this year will be good");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Yaksha and Battisa Yantra number 7 this year is moderately auspicious.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Takshak and Battisa Yantra number 8 this year will be good.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Shri BhVayuav ​​and Battisa Yantra number 9 current year will be moderate.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Shiva and Battisa Yantra number 10 this year is not good");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Krishna and Battisa Yantra number 11 will be very beneficial year.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Rama and Battisa Yantra number 12 will be a painful year.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Sita and Battisa Yantra Number 13 This year will be full of challenges for you.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Radha and Battisa Yantra number 14 this will be the best year.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Lakshmi and Battisa Yantra number 15 will be moderately fruitful this year.");
+break;
+default:
+$("#result").html("how");
+}}
+else if (card_Value==26){switch (cell_Value) {case "1":
+//{
+$("#result").html(" Your deity is Ketu and Battisa Yantra number 1 this day is not auspicious.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Mitra and Battisa yantra number 2 is an auspicious day");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Prithvi and Battisa Yantra number 3 This day will be moderate");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Kaal and Battisa Yantra number 4 this day is auspicious");
+break;
+case "5":
+//{
+$("#result").html("Your deity are Shesh and Battisa Yantra number 5 will be a moderate day.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Yaksha and Battisa Yantra number 6 days will be auspicious.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Takshak and Battisa Yantra number 7 days will be auspicious.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Shri BhVayuav ​​and Battisa Yantra number 8 is not auspicious.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Shiva and Battisa Yantra number 9 will be an auspicious day.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Krishna and Battisa Yantra number 10. Today will be a day of mental trouble.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Ram and Battisa Yantra number 11, this day will be auspicious.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Sita and Battisa Yantra number 12 is not a particularly auspicious day.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Radha and Battisa Yantra number 13, this day will be well spent.");
+break;
+case "14":
+//{
+$("#result").html("your deity is lakshmi and battisa yantra number 14 today is not a good day");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Vishnu and Battisa Yantra number 15 will be auspicious.");
+break;
+default:
+$("#result").html("how");
+}}
+else if (card_Value==27){switch (cell_Value) {case "1":
+//{
+$("#result").html("Your deity is Mitra and Battisa Yantra number 1, son will born.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Prithvi and Battisa yantra number 2, girl child will born.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Kaal and Battisa Yantra number 3, son will born.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Shesh and Battisa Yantra number 4, girl child will born.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Yaksha and Battisa Yantra number 5 son will born.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Takshak and Battisa Yantra number 6 girl child will born.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Shri BhVayuav ​​and Battisa Yantra number 7 son will born.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Shiva and Battisa Yantra number 8 will give birth to a girl child.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Krishna and Battisa Yantra number 9 girl child will born");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Ram and Battisa Yantra number 10 son will born.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Sita and Battisa Yantra number 11 girl child will  born.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Radha and Battisa Yantra number 12 sons will  born.");
+break;
+case "13":
+//{
+$("#result").html("Your God is Lakshmi and Battisa Yantra number 13, female gems are likely to prevail.");
+break;
+case "14":
+//{
+$("#result").html("Your God is Vishnu, and Battisa Yantra number 14, son child will  born.");
+break;
+case "15":
+//{
+$("#result").html("Your God is Narayan and Battisa Yantra 15, the girl child will born.");
+break;
+default:
+$("#result").html("how");
+}}
+else if (card_Value==28){switch (cell_Value) {case "1":
+//{
+$("#result").html("Your deity is Prithvi and Battisa Yantra number 1 there will be delay in fulfillment of desire");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Kaal and Battisa Yantra number 2 wish will be fulfilled");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Shesh and Battisa Yantra number 3 there will be delay in fulfillment of desire");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Yaksha and Battisa Yantra number 4 wish will be fulfilled soon");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Takshak and Battisa Yantra number 5 there will be delay in fulfillment of desire");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Shri BhVayuav ​​and Battisa Yantra No. 6, wish will be fulfilled soon.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Shiva and Battisa Yantra number 7 there will be delay in fulfillment of desire");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Krishna and Battisa Yantra number 8 wish will not be fulfilled in near future");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Rama and Battisa Yantra number 9 wish will surely be fulfilled.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Sita and Battisa Yantra number 10 there is doubt whether your wish will be fulfilled.");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Radha and Battisa Yantra number 11 there is doubt whether your wish will be fulfilled.");
+break;
+case "12":
+//{
+$("#result").html("your deity is lakshmi and battisa yantra number 12 wish will be fulfilled");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Vishnu and Battisa Yantra number 13 there is doubt whether your wish will be fulfilled");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Narayan and Battisa Yantra number 14 there is doubt whether your wish will be fulfilled.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Damodar and Battisa Yantra number 15 wish will be fulfilled");
+break;
+default:
+$("#result").html("how");
+}}
+else if (card_Value==29){switch (cell_Value) {case "1":
+//{
+$("#result").html(" Your deity is Kaal and Battisa Yantra number 1 will get spouse of simple nature.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Shesh and Battisa Yantra number 2 will get spouse of fiery nature.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Yaksha and Battisa Yantra number 3 spouse's nature will be simple.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Takshak and Battisa Yantra number 4 spouse will not be of good nature");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Shri BhVayuav ​​and Battisa Yantra number 5 will get spouse's fiery nature.");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Shiva and Battisa Yantra number 6 will get spouse of simple nature.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Krishna and Battisa Yantra number 7 will get spouse of good nature.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Rama and Battisa Yantra number 8 will get spouse of similar nature.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Sita and Battisa Yantra number 9 will get  spouse of good nature.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Radha and Battisa Yantra number 10 spouse's nature will not be good");
+break;
+case "11":
+//{
+$("#result").html("your deity is lakshmi and battisa yantra number 11 spouse will have a good nature");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Vishnu and Battisa Yantra number 12 spouse will have a good nature");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Narayan and Battisa Yantra number 13 will not get spouse of good nature.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Damodar and Battisa Yantra number 14 will get spouse of sweet nature.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Indra and Battisa Yantra number 15 spouse will be very gentle and affectionate");
+break;
+default:
+$("#result").html("how");
+}}
+else if (card_Value==30){switch (cell_Value) {case "1":
+//{
+$("#result").html(" Your deity is Shesh and Battisa number 1 relative will not deceive");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Yaksha and Battisa Yantra number 2 don't expect deception from relative");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Takshak and Battisa Yantra number 3 relative can deceive you");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Shri BhVayuav ​​and Battisa yantra number 4 relative can deceive you, be careful.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Shiva and Battisa Yantra number 5, relative will deceive you ");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Krishna and Battisa yantra number 6, relatve will not deceive you.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Ram and Battisa Yantra number 7 relative can deceive you, be careful");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Sita and Battisa Yantra number 8 relative is deceptive, be careful.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Radha and Battisa Yantra number 9 relative will not deceive you .");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Lakshmi and Battisa Yantra number 10 will never fail to deceive you .");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Vishnu and Battisa Yantra number 11, relative does not seem to be deceiving.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Narayan and Battisa yantra number 12, will surely deceive you .");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Damodar and Battisa Yantra number 13 will not deceive you");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Indra and Battisa Yantra number 14 relative is planning to cheat on you.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Ganesha and Battisa Yantra number 15, will help secretly .");
+break;
+default:
+$("#result").html("how");
+}}
+else if (card_Value==31){switch (cell_Value) {case "1":
+//{
+$("#result").html("Your deity is Yaksha and Battisa Yantra number 1 lover is having secret affVayu");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Takshak and Battisa Yantra number 2 Lover's love is pure");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Shri BhVayuav ​​and Battisa Yantra number 3 Lover's love is pure");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Shiva and Battisa Yantra number 4 lover does not love");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Krishna and Battisa Yantra number 5 lover is having secret affVayu");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Rama and Battisa Yantra number 6 lover loves you");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Sita and Battisa Yantra number 7 lover is only pretending");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Radha and Battisa Yantra number 8 lover just pretends to love");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Lakshmi and Battisa Yantra number 9 lover's love is pure");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Vishnu and Battisa Yantra number 10 lover's love is deceptive");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Narayan and Battisa Yantra number 11 love affVayu is harmful, be careful");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Damodar and Battisa Yantra number 12 lover is in love with you.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Indra and Battisa Yantra number 13. Love  is fake, stay safe");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Ganesha and Battisa Yantra number 14 Love  is fake");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Agni and Battisa Yantra number 15 Lover's love is pure");
+break;
+default:
+$("#result").html("how");
+}}
+else if (card_Value==32){switch (cell_Value) {case "1":
+//{
+$("#result").html(" Your deity is Takshak and Battisa Yantra number 1 will not be able to travel abroad now.");
+break;
+case "2":
+//{
+$("#result").html("Your deity is Shri BhVayuav ​​and Battisa Yantra No. 2 there are obstacles in foreign travel and will not be profitable.");
+break;
+case "3":
+//{
+$("#result").html("Your deity is Shiva and Battisa Yantra number 3 wish to travel abroad will be fulfilled.");
+break;
+case "4":
+//{
+$("#result").html("Your deity is Krishna and Battisa Yantra number 4 wish to travel abroad will not fulfil.");
+break;
+case "5":
+//{
+$("#result").html("Your deity is Rama and Battisa Yantra number 5 chances of traveling abroad are less, someone can cheat");
+break;
+case "6":
+//{
+$("#result").html("Your deity is Sita and Battisa Yantra number 6 will definitely go on a foreign trip.");
+break;
+case "7":
+//{
+$("#result").html("Your deity is Radha and Battisa Yantra number 7 will not be possible to go on a foreign trip.");
+break;
+case "8":
+//{
+$("#result").html("Your deity is Lakshmi and Battisa Yantra number 8 will have to face obstacles while traveling abroad.");
+break;
+case "9":
+//{
+$("#result").html("Your deity is Vishnu and Battisa Yantra number 9 it will be a safe and profitable journey.");
+break;
+case "10":
+//{
+$("#result").html("Your deity is Narayan and Battisa Yantra number 10 will not get the opportunity to travel abroad");
+break;
+case "11":
+//{
+$("#result").html("Your deity is Damodar and Battisa Yantra number 11 will not get the opportunity to travel abroad.");
+break;
+case "12":
+//{
+$("#result").html("Your deity is Indra and Battisa Yantra number 12 there will be obstacles, but you will  succeed in foreign travel after obstacles.");
+break;
+case "13":
+//{
+$("#result").html("Your deity is Ganesha and Battisa yantra number 13 will not be able to travel abroad.");
+break;
+case "14":
+//{
+$("#result").html("Your deity is Agni and Battisa Yantra number 14 will fulfill your desire to travel abroad.");
+break;
+case "15":
+//{
+$("#result").html("Your deity is Vayu and Battisa Yantra number 15 will not be able to travel abroad, obstacles will arise.");
+break;
+default:
+$("#result").html("TRY");
+ }	}
+else {
+$("#result").html("RETRY");
+   }} );
+	})
+	function goBack() {
+  window.history.back();
+}
+$window.location.reload();
+sessionStorage.clear();
+
+</script>
+
+<div id="result" style="text-align:left";> </div>
+<table id="myTable" border="1" style="border-collapse: collapse;text-align:center; cellpadding="8";"/table> 
+<div style="overflow-x : auto;  overflow-y : auto; display: block;"> </div>
+        <table id="myTable" border="1" align="center" style="border-collapse: collapse; cellpadding="0";max-width:device-width; min-width:1vw;opacity : 0 ;class: responsive;table-layout : fixed ;font-size: calc (0.75em + 1vmin); display: block;">
+
+    <!--1st ROW-->
+    <tr>
+        <td>8</td>
+        <td>15</td>
+        <td>2</td>
+        <td>7</td>
+
+    </tr>
+
+    <!--2nd ROW-->
+    <tr>
+        <td>6</td>
+        <td>3</td>
+        <td>12</td>
+        <td>11</td>
+
+    </tr>
+
+    <!--3rd ROW-->
+    <tr>
+        <td>14</td>
+        <td>9</td>
+        <td>8</td>
+        <td>1</td>
+
+    </tr>
+
+    <!--4th ROW-->
+    <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>10</td>
+        <td>13</td>
+
+    </tr>
+
+
+</table>
+<div class="center">
+<button onclick="goBack()">Go Back</button>
+</div>
+
+            <script>
+            // Script to open and close sidebar
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("myOverlay").style.display = "block";
+                document.getElementById("main").style.marginLeft = "100px";
+
+            }
+
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("myOverlay").style.display = "none";
+                document.getElementById("main").style.marginLeft = "0px";
+
+            }
+
+            // Modal Image Gallery
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+                var captionText = document.getElementById("caption");
+                captionText.innerHTML = element.alt;
+            }
+        </script>
+<!-- End your code here -->
+<script>if('serviceWorker'in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
+</body>
+</html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type='text/css'>
+

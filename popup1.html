@@ -1,0 +1,82 @@
+﻿<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+<link href="https://fonts.googleapis.com/css?family=Rozha+One&amp;subset=devanagari" rel="stylesheet"  type="text/css"> 
+<style>
+
+    body {
+        background: orange;
+        color: hsl(0, 100%, 25%);
+        text-align: center;
+              font-family: 'Rozha One', serif;
+        
+             
+        }
+
+    a {
+        display: inline-block;
+        padding: 15px 25px;
+               cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4CAF50;
+        visibility: hidden;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        animation: css 0s 5s forwards;
+    }
+
+        #a:hover {
+            background-color: #3e8e41
+        }
+
+        #a:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+    #a {
+        animation: css 0s 5s forwards;
+    }
+
+    @keyframes css {
+        to {
+            visibility: visible;
+        }
+    }
+    /* visibility / overflow: hidden; */ 
+</style>
+<body>
+    <p id=श्रीराम शलाका style="font-size:25px; text-decoration:underline; text-decoration-style: double;"> श्रीराम शलाका  </p>
+    <p id=Choupai style="font-size:20px; text-decoration:underline; line-height:0.5 ;"> चौपाई   </p>
+    <p id="couplet" style="color:navy; white-space:pre-wrap; align-content:center; font-size:calc(0.75em + 1vmin);"></p>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+    <script>
+        $(document).ready(function () {
+            typeWriter();
+        });
+        var i = 0;
+        var txt = "सुनु सिय सत्य असीस हमारी।  पूजहि मन कामना तुम्हारी॥ " + "\n" + "* अर्थ * " + "\n" + "यह चौपाई बालकाण्ड मे सीता जी को गौरी जी का आशिर्वाद है।" + "\n" + "\n" + "प्रश्न उत्तम है कार्य सिद्ध होगा। || " + "\n" + "Good Intentions Get Good Results Go Ahead Success is Waiting For You";
+        var speed = 50;
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("couplet").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+    </script>
+    <button id=a style="cursor:pointer" onclick="onclick=window.history.back()">Ask Another Question
+<script>if('serviceWorker'in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
+</body>
+</html>
+

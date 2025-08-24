@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type='text/css'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" type='text/css'>
+<style>
+    body, h1, h2, h3, h4, h5 {
+        font-family: "Poppins", sans-serif
+    }
+
+    body {
+        font-size: 16px;background-color:powderblue;
+    }
+</style>
+<body>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-Medium" style="z-index:3;width:20%; min-width:100px; font-weight:bold;opacity:1;" id="mySidebar">
+        <br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%; font-size: calc(0.75em + 1vmin);">CLOSE</a>
+        <div class="w3-container">
+            <h3 class="w3-padding-32 w3-medium font-size: calc(0.75em + 1vmin);"><b>Shree Bhairav Baba Prashnavali</b></h3>
+        </div>
+        <div class="w3-bar-block ">
+            <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+            <a href="new1.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Questions</a>
+            <a href="table3202.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Shree Batteesa Yantra</a>
+            <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a>
+            <a href="How.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">How To</a>
+            <!--  <a href="Support.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Support Us</a> -->
+            <a href="Contac.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-blue w3-Medium">
+  <link rel=\"manifest\" href=\"/sbbp/manifest.json\">
+  <base href=\"/sbbp/\">
+        <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">☰</a>
+        <span>SHREE BHAIRAV BABA PRASHNAVALI</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div id="main">
+
+        <div class="w3-main" style="margin-left:340px;margin-right:40px;margin-top:25px;">
+            <div class="w3-row-padding">
+                <div class="w3-half" style="margin-top:34px;">
+                    <img src="images/01.jpg" style="width:100%" onclick="onClick(this)" alt "OM NAMO BHARVAYE NAMAH" />
+                    <button class="button method" onclick ="window.location.href='How.html'">METHOD</button>
+                    <button class="button asknow" onclick ="window.location.href='new1.html'">SEEK ANSWER</button>
+                </div>
+            </div>
+        </div>
+        <style>
+            .button {
+                border: none;
+                color: white;
+                padding: 1px 2px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 20px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+
+               // margin-left: 15%;
+             //   margin-right:10%;
+             width:45%
+            }
+
+            .method {
+                background-color: white;
+              //  align-items: center;
+                color: black;
+                border: 2px solid #4CAF50; background-color: #4CAF50;
+             //   justify-content:center;
+            }
+
+                .method:hover {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+
+            .asknow {
+                background-color: white;
+                // align-items: center;
+                color: black;
+                border: 2px solid #008CBA;
+                background-color: #008CBA;
+                // justify-content:center;
+            }
+
+                .asknow:hover {
+                    background-color: #008CBA;
+                    color: white;
+                }
+        </style>
+        <script>
+            // Script to open and close sidebar
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("myOverlay").style.display = "block";
+                document.getElementById("main").style.marginLeft = "100px";
+
+            }
+
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("myOverlay").style.display = "none";
+                document.getElementById("main").style.marginLeft = "0px";
+
+            }
+
+            // Modal Image Gallery
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+                var captionText = document.getElementById("caption");
+                captionText.innerHTML = element.alt;
+            }
+        </script>
+        
+        <script type="text/javascript" src="Toast.js"></script>
+
+        <script>
+            var lastTimeBackPress = 0;
+            var timePeriodToExit = 2000;
+
+            function onBackKeyDown(e) {
+                e.preventDefault();
+                //e.stopPropagation();
+                if (new Date().getTime() - lastTimeBackPress < timePeriodToExit) {
+                    navigator.app.exitApp();
+                } else {
+                    window.plugins.toast.showWithOptions(
+                        {
+                            message: "Press again to exit.",
+                            duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+                            position: "bottom",
+                            addPixelsY: -40  // added a negative value to move it up a bit (default 0)
+                        }
+                    );
+
+                    lastTimeBackPress = new Date().getTime();
+                }
+            };
+
+            document.addEventListener("backbutton", onBackKeyDown, false);
+        </script>
+<script>if('serviceWorker'in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
+</body>
+</html>

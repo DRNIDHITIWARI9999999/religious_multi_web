@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Religious Apps – Shalaka, SBBP, SCYP, SVC (Web/PWA)</title>
+<meta name="description" content="Use Shree Ram Shalaka, SBBP, SCYP and SVC directly in your browser. Fast, installable PWAs.">
+<meta property="og:title" content="Religious Apps – Web Collection">
+<meta property="og:description" content="Open spiritual apps in your browser with no install."><meta property="og:type" content="website"><meta property="og:image" content="/icons/icon-512.png">
+<link rel="icon" href="/favicon.ico"><link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css"></head>
+<body>
+<nav class="nav"><div class="brand">Religious Apps</div><div style="display:flex;gap:14px;align-items:center"><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a><button id="mode" class="toggle" aria-label="Toggle theme">🌗</button></div></nav>
+<section class="hero"><div><h1>Open your spiritual apps right in the browser.</h1><p>Shree Ram Shalaka, SBBP, SCYP and SVC — fast, installable PWAs.</p><div class="cta"><a class="btn" href="/Shalaka.html">Open Shalaka</a><a class="btn alt" href="/apps.html">See all apps</a></div></div><div><div class="card"><b>Install Tip</b><p>On mobile Chrome, tap the ⋮ menu → <i>Add to Home screen</i> to install.</p><p style="margin-top:6px">Works offline after first load.</p></div></div></section>
+<section class="grid">
+<div class="card"><h3>Shree Ram Shalaka</h3><p>Tap a box to receive guidance.</p><a class="btn" href="/Shalaka.html">Open</a></div>
+<div class="card"><h3>SBBP</h3><p>Bhairav Baba Prashnavali (web).</p><a class="btn" href="/sbbp/">Open</a></div>
+<div class="card"><h3>SCYP</h3><p>Converted Cordova app — web/PWA edition.</p><a class="btn" href="/scyp/">Open</a></div>
+<div class="card"><h3>SVC</h3><p>Converted Cordova app — web/PWA edition.</p><a class="btn" href="/svc/">Open</a></div>
+</section>
+<footer class="footer">© Dr Nidhi Tiwari • Built with care • <a href="/sitemap.xml">Sitemap</a></footer>
+<script>const modeBtn=document.getElementById('mode');const saved=localStorage.getItem('theme');if(saved==='light')document.body.classList.add('light');modeBtn.addEventListener('click',()=>{document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');});if('serviceWorker'in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
+</body></html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"  type='text/css'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans"  type='text/css'>
+<style>
+    body, h1, h2, h3, h4, h5 {
+        font-family: "Poppins", sans-serif
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+          
+</style>
+<body>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-Medium" style="z-index:3;width:20%; min-width:100px; font-weight:bold;opacity:1;" id="mySidebar">
+        <br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%; font-size: calc(0.75em + 1vmin);">CLOSE</a>
+        <div class="w3-container">
+            <h3 class="w3-padding-32 w3-medium font-size: calc(0.75em + 1vmin);"><b>SHREE RAM SHALAKA</b></h3>
+        </div>
+        <div class="w3-bar-block ">
+            <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+            <a href="Shalaka.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Shalaka</a>
+			<a href="ShalakaT.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Original Shalaka</a>
+            <a href="About.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a>
+            <a href="How.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">How To</a>
+            <a href="Support.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Support Us</a>
+            <a href="Contac.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-red w3-Medium">
+  <link rel=\"manifest\" href=\"/manifest.json\">
+        <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+        <span>SHREE RAM SHALAKA</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+ <div class="w3-container" id="services" style="margin-top:25px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>About </b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+	<p style="text-align:justify" > Sri Ram Shalaka is a divine utility mentioned in the holy Book Shree Ram Charit Manas, capable of guiding humankind to right direction when in  doubt, it hides nine verses or chopai of Philosophical meaning taken from Shree Ram Charit Manas, from which solution to any actions/questions related to our activities and lives are inferred and ingrained, in a square matrix of size 15x15.  Each verse in shalaka has been represented by 25 unique akshars.  </p>
+    </div>
+
+	        <script>
+            // Script to open and close sidebar
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("myOverlay").style.display = "block";
+                document.getElementById("main").style.marginLeft = "100px";
+
+            }
+
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("myOverlay").style.display = "none";
+                document.getElementById("main").style.marginLeft = "0px";
+
+            }
+
+            // Modal Image Gallery
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+                var captionText = document.getElementById("caption");
+                captionText.innerHTML = element.alt;
+            }
+        </script>
+  

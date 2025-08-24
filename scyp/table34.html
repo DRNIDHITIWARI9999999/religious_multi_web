@@ -1,0 +1,2542 @@
+﻿<html>
+<head>
+  <link rel=\"manifest\" href=\"/scyp/manifest.json\">
+  <base href=\"/scyp/\">
+    <title>Determine Click Position on click of a table cell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" type='text/css'>
+    <br> </br>
+
+    <h><p> GAN GANPATYE NAMAH </p></h>
+    <a><p> SHREE CHOUNTISA YANTRA </p></a>
+    <!--CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" type='text/css'>
+    <style>
+
+            tbody {
+                border: 1px solid #B87334 ;
+               
+                background-position: center;
+                color: #F4EA17;
+                margin-top: 50%;
+                margin-bottom: 50%;
+            }
+
+
+            td {
+                cursor: pointer;
+                background: -moz-linear-gradient(top, #F5A872 , #F5A872 );
+                background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#F5A872 ), to(#F5A872 ));
+                text-align: center;
+                min-width: 1vw;
+                height: 100%;
+                opacity: 01;	text-color: #F4EA17;
+            }
+
+            table {
+                width: 90%;
+           
+            }
+
+            h {
+                text-align: center;
+                color: Blue;
+            }
+
+            a {
+                text-align: center;
+                color: Blue;
+            }
+ P {
+                text-align: center;
+                color: Blue;
+            }
+            td {
+                cursor: pointer;
+           background: rgb(209,121,59);
+background: radial-gradient(rgba(209,121,59,1) 0%, rgba(253,230,29,1) 50%, rgba(209,121,59,1) 100%);
+                text-align: center;
+                width: 22.5%;
+                position: relative;
+                padding-top: 5.625%;
+      text-shadow: 2px 2px #D1793B;
+				text-color: #F4EA17;
+          font-weight:900; font-size: large;  }
+            body {
+                background-color: powderblue;
+            }
+
+                td:after {
+                    content: '';
+                    display: block;
+                    margin-top: 25%;
+                }
+
+                td:hover {
+                    background: -moz-linear-gradient(top, 	#D1793B, 	#D1793B);
+                    background: -webkit-gradient(linear, 25% 25%, 25% 25%, from(	#D1793B), to(	#D1793B));	text-color: #F4EA17;
+                }
+
+                td:active {
+                    background: -moz-linear-gradient(top, 	#D1793B, #D1793B);
+                    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(	#D1793B), to(#D1793B));	text-color: #F4EA17;
+				
+                }
+
+            #result {
+                font-weight: bold;
+                font-size: 16pt;
+                text-align: center;
+                margin-left: 10%;
+                margin-right: 10%;
+				
+            }
+
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 52px;
+                border: 3px;
+            }
+
+    </style>   <!-- Sidebar/menu -->
+
+
+    <script>            // Script to open and close sidebar
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("myOverlay").style.display = "block";
+                document.getElementById("main").style.marginLeft = "100px";
+document.getElementById("main").style.margintop = "50px";
+            }
+
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("myOverlay").style.display = "none";
+                document.getElementById("main").style.marginLeft = "0px";
+
+            }
+
+            // Modal Image Gallery
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+                var captionText = document.getElementById("caption");
+                captionText.innerHTML = element.alt;
+            }
+
+    </script>
+    <!--JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#myTable td").click(function() {     
+ var cell_Value = ($(this).text());
+ var card_Value =    sessionStorage.getItem("cardvalue");  
+ var column_num = parseInt($(this).index()) + 1;
+            var row_num = parseInt($(this).parent().index()) + 1;
+ $("table").hide();
+ //		$("a").hide();
+ document.getElementById("result").innerHTML = sessionStorage.getItem("cardvalue");
+           // $("#result").html( "Row_num =" + row_num + "  ,  Column_num ="+ column_num  +  "card value = " + sessionStorage.getItem("cardvalue") + cell_Value);  
+		   if (card_Value==1){		
+switch (cell_Value) 
+{ 
+case "1":
+//{
+$("#result").html("सन्तान का सुख मिलेगा।");
+break;
+case "2":
+//{
+$("#result").html("सन्तान हेतु गृह-देवता की पूजा करो।");
+break;
+case "3":
+//{
+$("#result").html("सन्तान सुख उपाय से होगा।");
+break;
+case "4":
+//{
+$("#result").html("संतान सुख की आशा पूरी होगी।");
+break;
+case "5":
+//{
+$("#result").html("संतान-सुख उपाय से मिलेगा।");
+break;
+case "6":
+//{
+$("#result").html("सन्तान-सुख देर से होगा।");
+break;
+case "7":
+//{
+$("#result").html(" संतान का सुख मिलेगा।");
+break;
+case "8":
+//{
+$("#result").html("संतान-सुख में बाधा, गोपाल जप कराओ।");
+break;
+case "9":
+//{
+$("#result").html("संतान-सुख देरी से होगा।");
+break;
+case "10":
+//{
+$("#result").html("सन्तान सुख नहीं मिलेगा।");
+break;
+case "11":
+//{
+$("#result").html("सन्तान-सुख उपाय से होगा।");
+break;
+case "12":
+//{
+$("#result").html("सन्तान सुख होगा।");
+break;
+case "13":
+//{
+$("#result").html("सन्तान-सुख उपाय से होगा।");
+break;
+case "14":
+//{
+$("#result").html("सन्तान-सुख मिलेगा, चिन्ता छोड़ दो।");
+break;
+case "15":
+//{
+$("#result").html("सन्तान-सुख उपाय से होगा।");
+break;
+case "16":
+$("#result").html("संतान सुख नहीं मिलेगा।"); 
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==2){			
+switch (cell_Value) 
+{ case "1":
+//{
+$("#result").html("मुकदमे में जीत होगी।");
+break;
+case "2":
+//{
+$("#result").html("मुकदमे से जीतने में सन्देह है।");
+break;
+case "3":
+//{
+$("#result").html("मुकदमे में हार होगी।");
+break;
+case "4":
+//{
+$("#result").html("मुकदमे में जीत होगी।");
+break;
+case "5":
+//{
+$("#result").html("मुकदमे की जीत में सन्देह है।");
+break;
+case "6":
+//{
+$("#result").html("मुकदमे में जीत पाना कठिन है।");
+break;
+case "7":
+//{
+$("#result").html(" मुकदमा जीत जाओगे।");
+break;
+case "8":
+//{
+$("#result").html("मुकदमा जीतने में सन्देह है।");
+break;
+case "9":
+//{
+$("#result").html("मुकदमे में जीत निश्चित है।");
+break;
+case "10":
+//{
+$("#result").html("मुकदमे में जीत होने में सन्देह है।");
+break;
+case "11":
+//{
+$("#result").html(" मुकदमे में हार की संभावना है।");
+break;
+case "12":
+//{
+$("#result").html(" मुकदमे में जीत होगी।");
+break;
+case "13":
+//{
+$("#result").html(" मुकदमे की जीत में सन्देह है।");
+break;
+case "14":
+//{
+$("#result").html(" मुकदमे में जीत होगी।");
+break;
+case "15":
+//{
+$("#result").html(" मुकदमे की जीत में सन्देह है।");
+break;
+case "16":
+$("#result").html("मुकदमे में जीत होगी।"); 
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==3){		
+switch (cell_Value) 
+{ case "1":
+//{
+$("#result").html("भाग्योदय शीघ्र ही होगा।");
+break;
+case "2":
+//{
+$("#result").html("भाग्योदय में देर है।");
+break;
+case "3":
+//{
+$("#result").html("भाग्योदय अभी नहीं हो सकेगा।");
+break;
+case "4":
+//{
+$("#result").html("भाग्योदय शीघ्र ही होगा।");
+break;
+case "5":
+//{
+$("#result").html("भाग्योदय शीघ्र होने वाला है।");
+break;
+case "6":
+//{
+$("#result").html("भाग्योदय अभी देर से होगा।");
+break;
+case "7":
+//{
+$("#result").html(" भाग्य का सितारा शीघ्र चमकेगा।");
+break;
+case "8":
+//{
+$("#result").html("भाग्योदय का समय नजदीक है।");
+break;
+case "9":
+//{
+$("#result").html("भाग्योदय शीघ्र ही होने वाला है।");
+break;
+case "10":
+//{
+$("#result").html(" आपके सितारे चमकने में देर है।");
+break;
+case "11":
+//{
+$("#result").html(" भाग्योदय निकट भविष्य में होगा।");
+break;
+case "12":
+//{
+$("#result").html(" भाग्योदय अभी नहीं होगा।");
+break;
+case "13":
+//{
+$("#result").html(" भाग्योदय शीघ्र ही होने वाला है।");
+break;
+case "14":
+//{
+$("#result").html(" भाग्योदय अभी देर से होगा।");
+break;
+case "15":
+//{
+$("#result").html(" भाग्योदय होने वाला है।");
+break;
+case "16":
+$("#result").html("भाग्योदय शीघ्र होगा।"); 
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==4){		
+switch (cell_Value) 
+{ case "1":
+//{
+$("#result").html("नौकरी शीघ्र मिल जायेगी।");
+break;
+case "2":
+//{
+$("#result").html("नौकरी प्रयत्न से मिलेगी।");
+break;
+case "3":
+//{
+$("#result").html("नौकरी नहीं मिलेगी।");
+break;
+case "4":
+//{
+$("#result").html("सनौकरी काफी प्रयत्न से ही मिलेगी।");
+break;
+case "5":
+//{
+$("#result").html("नौकरी अभी नहीं मिलेगी।");
+break;
+case "6":
+//{
+$("#result").html("नौकरी मिल जायेगी।");
+break;
+case "7":
+//{
+$("#result").html(" नौकरी मिलने में देर है।");
+break;
+case "8":
+//{
+$("#result").html("सनौकरी मिलने के अभी आसार नहीं है।");
+break;
+case "9":
+//{
+$("#result").html("नौकरी मिल जायेगी।");
+break;
+case "10":
+//{
+$("#result").html(" नौकरी मिल जायेगी।");
+break;
+case "11":
+//{
+$("#result").html(" नौकरी मिलने में सन्देह है।");
+break;
+case "12":
+//{
+$("#result").html(" नौकरी अभी नहीं मिलेगी।");
+break;
+ $("#result").html(" नौकरी मिल जायेगी।");
+break;
+case "14":
+//{
+$("#result").html(" नौकरी मिलने में सन्देह है।");
+break;
+case "15":
+//{
+$("#result").html(" नौकरी मिल जायेगी।");
+break;
+case "16":
+$("#result").html("नौकरी अभी देर से मिलेगी।"); 
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==5){		
+switch (cell_Value) 
+{ case "1":
+//{
+$("#result").html("तरक्की के योग अच्छे हैं।");
+break;
+case "2":
+//{
+$("#result").html("तरक्की के योग में देर है।");
+break;
+case "3":
+//{
+$("#result").html("तरक्की का योग नहीं है।");
+break;
+case "4":
+//{
+$("#result").html("तरक्की शीघ्र होगी।");
+break;
+case "5":
+//{
+$("#result").html("तरक्की का योग अभी नहीं है।");
+break;
+case "6":
+//{
+$("#result").html("तरक्की का योग बन रहा है।");
+break;
+case "7":
+//{
+$("#result").html("तरक्की होने में सन्देह है।");
+break;
+case "8":
+//{
+$("#result").html("तरक्की अभी नहीं हो सकेगी।");
+break;
+case "9":
+//{
+$("#result").html("तरक्की के योग में देरी है।");
+break;
+case "10":
+//{
+$("#result").html("तरक्की अभी नहीं हो सकेगी।");
+break;
+case "11":
+//{
+$("#result").html("तरक्की तो होगी, किन्तु देर से।");
+break;
+case "12":
+//{
+$("#result").html("तरक्की शीघ्र ही होगी।");
+break;
+case "13":
+//{
+$("#result").html("तरक्की अभी नहीं हो सकेगी।");
+break;
+case "14":
+//{
+$("#result").html("तरक्की का योग अभी नहीं बनता।");
+break;
+case "15":
+//{
+$("#result").html("तरक्की का योग प्रयत्न से है।");
+break;
+case "16":
+$("#result").html("तरक्की में बाधा है।"); 
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==6){		
+switch (cell_Value) 
+{ case "1":
+//{
+$("#result").html("खेती से लाभ होगा।");
+break;
+case "2":
+//{
+$("#result").html("खेती से लाभ कम होगा।");
+break;
+case "3":
+//{
+$("#result").html("खेती से लाभ नहीं होगा।");
+break;
+case "4":
+//{
+$("#result").html("सखेती से लाभ मिलेगा।");
+break;
+case "5":
+//{
+$("#result").html("संतान-सुख उपाय से मिलेगा।");
+break;
+case "6":
+//{
+$("#result").html("सन्तान-सुख देर से होगा।");
+break;
+case "7":
+//{
+$("#result").html(" खेती से लाभ कम होगा।");
+break;
+case "8":
+//{
+$("#result").html("खेती से लाभ नहीं होगा।");
+break;
+case "9":
+//{
+$("#result").html("खेती में लाभ मिलेगा।");
+break;
+case "10":
+//{
+$("#result").html("खेती से लाभ मिलेगा।");
+break;
+case "11":
+//{
+$("#result").html("खेती से पूरा लाभ नहीं मिलेगा।");
+break;
+case "12":
+//{
+$("#result").html("खेती से लाभ मिलने में सन्देह है।");
+break;
+case "13":
+//{
+$("#result").html("खेती से लाभ नहीं मिलेगा।");
+break;
+case "14":
+//{
+$("#result").html("खेती में लाभ मिलेगा।");
+break;
+case "15":
+//{
+$("#result").html("खेती से लाभ नहीं होगा।");
+break;
+case "16":
+$("#result").html("खेती से लाभ मिलेगा।"
+); 
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==7){		
+switch (cell_Value) 
+{ case "1":
+//{
+$("#result").html("मकान बनाने की कामना पूरी होगी।");
+break;
+case "2":
+//{
+$("#result").html("मकान के बनने में देर है।");
+break;
+case "3":
+//{
+$("#result").html("मकान नहीं बन सकेगा।");
+break;
+case "4":
+//{
+$("#result").html("मकान की आशा पूरी नहीं होगी।");
+break;
+case "5":
+//{
+$("#result").html("मकान नहीं बन सकेगा।");
+break;
+case "6":
+//{
+$("#result").html("मकान अभी देर से बनेगा।");
+break;
+case "7":
+//{
+$("#result").html(" मकान की कामना देर से पूरी होगी।");
+break;
+case "8":
+//{
+$("#result").html("मकान शीघ्र बनेगा।");
+break;
+case "9":
+//{
+$("#result").html("मकान अभी नहीं बनेगा।");
+break;
+case "10":
+//{
+$("#result").html("मकान की कामना पूरी होगी।");
+break;
+case "11":
+//{
+$("#result").html("मकान अभी देर से बनेगा।");
+break;
+case "12":
+//{
+$("#result").html("मकान अभी नहीं बन सकेगा।");
+break;
+case "13":
+//{
+$("#result").html("मकान की आशा पूरी होगी।");
+break;
+case "14":
+//{
+$("#result").html("मकान की आशा पूरी नहीं होगी।");
+break;
+case "15":
+//{
+$("#result").html("मकान अभी नहीं बन पायेगा।");
+break;
+case "16":
+$("#result").html("मकान अभी नहीं बन पायेगा।"); 
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==8){		
+switch (cell_Value) 
+{ case "1":
+//{
+$("#result").html("पास हो जाओगे।");
+break;
+case "1":
+//{
+$("#result").html("पास हो जाओगे।");
+break;
+case "2":
+//{
+$("#result").html("पास होने में सन्देह है।");
+break;
+case "3":
+//{
+$("#result").html("फेल हो जाओगे।");
+break;
+case "4":
+//{
+$("#result").html("पास हो जाओगे।");
+break;
+case "5":
+//{
+$("#result").html("पास होने में सन्देह है।");
+break;
+case "6":
+//{
+$("#result").html("पास नहीं हो सकोगे।");
+break;
+case "7":
+//{
+$("#result").html("पास हो जाओगे।");
+break;
+case "8":
+//{
+$("#result").html("पास होने में सन्देह है।");
+break;
+case "9":
+//{
+$("#result").html("पास हो जाओगे, शिव पूजा करो।");
+break;
+case "10":
+//{
+$("#result").html("पास हो जाओगे।");
+break;
+case "11":
+//{
+$("#result").html("पास होना मुश्किल है।");
+break;
+case "12":
+//{
+$("#result").html("पास होने में सन्देह है।");
+break;
+case "13":
+//{
+$("#result").html("पास हो जाओगे।");
+break;
+case "14":
+//{
+$("#result").html("पास होने में सन्देह है।");
+break;
+case "15":
+//{
+$("#result").html("पास नहीं होगें।");
+break;
+case "16":
+//{
+$("#result").html("पास हो जाओगे।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==9){		
+switch (cell_Value) 
+{case "1":
+//{
+$("#result").html("विद्या प्राप्त करोगे।");
+break;
+case "2":
+//{
+$("#result").html("विद्या थोड़ी प्राप्त कर सकोगे।");
+break;
+case "3":
+//{
+$("#result").html("पूरी विद्या प्राप्त नहीं कर सकोगे।");
+break;
+case "4":
+//{
+$("#result").html("विद्या प्राप्त करोगे।");
+break;
+case "5":
+//{
+$("#result").html("विद्या प्राप्त नहीं कर सकोगे।");
+break;
+case "6":
+//{
+$("#result").html("विद्या प्राप्त कर लोगे।");
+break;
+case "7":
+//{
+$("#result").html("विद्या प्राप्ति शिव की पूजा से होगी।");
+break;
+case "8":
+//{
+$("#result").html("विद्या प्राप्त होना कठिन है।");
+break;
+case "9":
+//{
+$("#result").html("विद्या थोड़ी प्राप्त होगी।");
+break;
+case "10":
+//{
+$("#result").html("विद्या प्राप्त कर सकोगे।");
+break;
+case "11":
+//{
+$("#result").html("विद्या प्राप्त नहीं हो सकेगी।");
+break;
+case "12":
+//{
+$("#result").html("विद्या कठिन परिश्रम से प्राप्त होगी।");
+break;
+case "13":
+//{
+$("#result").html("विद्या प्राप्त करोगे।");
+break;
+case "14":
+//{
+$("#result").html("विद्या प्राप्त नहीं कर सकोगे।");
+break;
+case "15":
+//{
+$("#result").html("शिक्षा प्राप्त करोगे।");
+break;
+case "16":
+//{
+$("#result").html("विद्या पूजा से प्राप्त होगी।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==10){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("जीवन सुखपूर्वक व्यतीत होगा।");
+break;
+case "2":
+//{
+$("#result").html("जीवन संघर्षमय बीतेगा।");
+break;
+case "3":
+//{
+$("#result").html("जीवन काफी कठिनाइयों से बीतेगा।");
+break;
+case "4":
+//{
+$("#result").html("जीवन उत्तम प्रकार से बीतेगा।");
+break;
+case "5":
+//{
+$("#result").html("जीवन मध्यम श्रेणी में बीतेगा।");
+break;
+case "6":
+//{
+$("#result").html("जीवन में कठिनाइयां विशेष रहेगी।");
+break;
+case "7":
+//{
+$("#result").html("जीवन अच्छी तरह से बीतेगा।");
+break;
+case "8":
+//{
+$("#result").html("जीवन में कठिनाइयां अधिक आयेगीं।");
+break;
+case "9":
+//{
+$("#result").html("जीवन सुखमय व्यतीत होगा।");
+break;
+case "10":
+//{
+$("#result").html("जीवन बाधाओं से युक्त बीते।");
+break;
+case "11":
+//{
+$("#result").html("जीवन में सफलता कम मिलेगी।");
+break;
+case "12":
+//{
+$("#result").html("जीवन में सुख नहीं मिलेगा।");
+break;
+case "13":
+//{
+$("#result").html("जीवन सुखपूर्वक व्यतीत करोगे।");
+break;
+case "14":
+//{
+$("#result").html("जीवन में कष्ट अधिक मिले।");
+break;
+case "15":
+//{
+$("#result").html("जीवन सुखपूर्वक बीतेगा।");
+break;
+case "16":
+//{
+$("#result").html("जीवन में विशेष बाधाएं आयेंगी।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==11){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("जीवन में सफलता प्राप्त होगी।");
+break;
+case "2":
+//{
+$("#result").html("सईलता मिल जाएगी।");
+break;
+case "3":
+//{
+$("#result").html("जीवन में सफलता पाना कठिन है।");
+break;
+case "4":
+//{
+$("#result").html("जीवन में सफलता मिलेगी।");
+break;
+case "5":
+//{
+$("#result").html("जीवन में सफलता नहं मिलेगी।");
+break;
+case "6":
+//{
+$("#result").html("जीवन में सफलता कम मिलेगी।");
+break;
+case "7":
+//{
+$("#result").html("जीवन में सफलता पाना कठिन है।");
+break;
+case "8":
+//{
+$("#result").html("जीवन में सफलता प्राप्त करोगे।");
+break;
+case "9":
+//{
+$("#result").html("जीवन में सफलता कम मिलेगी।");
+break;
+case "10":
+//{
+$("#result").html("जीवन में सफलता नहीं मिलेगी।");
+break;
+case "11":
+//{
+$("#result").html("जीवन में सफलता कष्ट से मिलेगी।");
+break;
+case "12":
+//{
+$("#result").html("जीवन में सफल होना कठिन है।");
+break;
+case "13":
+//{
+$("#result").html("जीवन में अच्छी सफलता मिलेगी।");
+break;
+case "14":
+//{
+$("#result").html("जीवन में सफल होना मुश्किल है।");
+break;
+case "15":
+//{
+$("#result").html("जीवन में अच्छी सफलता मिलेगी।");
+break;
+case "16":
+//{
+$("#result").html("जीवन में सफलता कम मिलेगी।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==12){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("गड़ा धन प्राप्त करोगे।");
+break;
+case "2":
+//{
+$("#result").html("गड़ा धन विशेष उपाय द्वारा मिले।");
+break;
+case "3":
+//{
+$("#result").html("गड़ा धन गृह-देव की पूजा से मिले।");
+break;
+case "4":
+//{
+$("#result").html("गड़ा धन प्राप्त होगा।");
+break;
+case "5":
+//{
+$("#result").html("गड़ा धन उपाय से मिलेगा।");
+break;
+case "6":
+//{
+$("#result").html("गड़ा धन मिलेगा।");
+break;
+case "7":
+//{
+$("#result").html("गड़ा धन आसुरी-सिद्धि द्वारा मिलेगा।");
+break;
+case "8":
+//{
+$("#result").html("गड़ा धन भाग्य में नहीं है।");
+break;
+case "9":
+//{
+$("#result").html("गड़ा धन पितृ-पूजा से मिलेगा।");
+break;
+case "10":
+//{
+$("#result").html("गड़ा धन मिलने में सन्देह है।");
+break;
+case "11":
+//{
+$("#result").html("गड़ा धन प्राप्त होगा।");
+break;
+case "12":
+//{
+$("#result").html("गड़ा धन नहीं मिलेगा।");
+break;
+case "13":
+//{
+$("#result").html("गड़ा धन शीघ्र प्राप्त होगा।");
+break;
+case "14":
+//{
+$("#result").html("गड़ा धन नहीं मिलेगा।");
+break;
+case "15":
+//{
+$("#result").html("गड़ा धन पितृ-पूजा से मिल सकेगा।");
+break;
+case "16":
+//{
+$("#result").html("गड़ा धन शीघ्र प्राप्त हो जायेगा।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==13){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("विवाह हो जायेगा।");
+break;
+case "2":
+//{
+$("#result").html("विवाह होने में सन्देह है।");
+break;
+case "3":
+//{
+$("#result").html("विवाह उपाय से होगा।");
+break;
+case "4":
+//{
+$("#result").html("विवाह हो जायेगा।");
+break;
+case "5":
+//{
+$("#result").html("विवाह उपाय से होगा।");
+break;
+case "6":
+//{
+$("#result").html("विवाह होने में सन्देह है।");
+break;
+case "7":
+//{
+$("#result").html("विवाह हो जायेगा।");
+break;
+case "8":
+//{
+$("#result").html("विवाह उपाय से होगा।");
+break;
+case "9":
+//{
+$("#result").html("विवाह देर से होगा।");
+break;
+case "10":
+//{
+$("#result").html("विवाह हो जायेगा।");
+break;
+case "11":
+//{
+$("#result").html("विवाह होने में सन्देह है।");
+break;
+case "12":
+//{
+$("#result").html("विवाह उपाय से होगा।");
+break;
+case "13":
+//{
+$("#result").html("विवाह होगा, चिन्ता करना व्यर्थ है।");
+break;
+case "14":
+//{
+$("#result").html("विवाह उपाय से हो सकेगा।");
+break;
+case "15":
+//{
+$("#result").html("विवाह उपाय से होगा।");
+break;
+case "16":
+//{
+$("#result").html("विवाह शीघ्र ही हो जायेगा।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==14){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("बीमार अच्छा हो जायेगा।");
+break;
+case "2":
+//{
+$("#result").html("बीमार देर से अच्छा होगा।");
+break;
+case "3":
+//{
+$("#result").html("बीमार के ठीक होने में सन्देह है।");
+break;
+case "4":
+//{
+$("#result").html("बीमार अच्छा हो जायेगा।");
+break;
+case "5":
+//{
+$("#result").html("बीमार ठीक होने में सन्देह है।");
+break;
+case "6":
+//{
+$("#result").html("बीमार अच्छा हो जायेगा।");
+break;
+case "7":
+//{
+$("#result").html("बीमार अच्छा हो जायेगा।");
+break;
+case "8":
+//{
+$("#result").html("बीमार के अच्छे होने में सन्देह है।");
+break;
+case "9":
+//{
+$("#result").html("बीमारी अच्छी हो जायेगी।");
+break;
+case "10":
+//{
+$("#result").html("बीमार अच्छा नहीं होगा।");
+break;
+case "11":
+//{
+$("#result").html("बीमार अच्छा हो जायेगा।");
+break;
+case "12":
+//{
+$("#result").html("बीमार अच्छा होना कठिन है।");
+break;
+case "13":
+//{
+$("#result").html("बीमार के अच्छे होने में सन्देह है।");
+break;
+case "14":
+//{
+$("#result").html("बीमार अच्छा हो जायेगा।");
+break;
+case "15":
+//{
+$("#result").html("बीमार ले अच्छा होने में सन्देह है।");
+break;
+case "16":
+//{
+$("#result").html("बीमार शीघ्र ही अच्छा होगा।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==15){		
+switch (cell_Value) {
+case "1": 
+//{
+$("#result").html("स्वप्न का फल उत्तम है।");
+break;
+case "2":
+//{
+$("#result").html("स्वप्न का फल विशेष अच्छा नहीं है।");
+break;
+case "3":
+//{
+$("#result").html("स्वप्न का फल उत्तम है।");
+break;
+case "4":
+//{
+$("#result").html("स्वप्न का फल उत्तम है।");
+break;
+case "5":
+//{
+$("#result").html("स्वप्न का फल अच्छा नहीं है।");
+break;
+case "6":
+//{
+$("#result").html("स्वप्न का फल मध्यम रहेगा।");
+break;
+case "7":
+//{
+$("#result").html("स्वप्न का फल उत्तम है।");
+break;
+case "8":
+//{
+$("#result").html("स्वप्न का फल मध्यम है।");
+break;
+case "9":
+//{
+$("#result").html("स्वप्न का फल अशुभ है।");
+break;
+case "10":
+//{
+$("#result").html("स्वप्न का फल शुभ है।");
+break;
+case "11":
+//{
+$("#result").html("स्वप्न का फल उत्तम नहीं है।");
+break;
+case "12":
+//{
+$("#result").html("स्वप्न का फल शुभ है।");
+break;
+case "13":
+//{
+$("#result").html("स्वप्न का फल शुभ नहीं है।");
+break;
+case "14":
+//{
+$("#result").html("स्वप्न का फल शुभ है।");
+break;
+case "15":
+//{
+$("#result").html("स्वप्न का फल अच्छा नहीं है।");
+break;
+case "16":
+//{
+$("#result").html("तबादले की आशा देर से पूरी होगी।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==16){		
+switch (cell_Value) {
+case "1"://{
+$("#result").html("तबादला शीघ्र हो जायेगा।");
+break;
+case "2":
+//{
+$("#result").html("तबादले का योग चल रहा है।");
+break;
+case "3":
+//{
+$("#result").html("तबादला नहीं होगा।");
+break;
+case "4":
+//{
+$("#result").html("तबादला हो जायेगा।");
+break;
+case "5":
+//{
+$("#result").html("तबादला रुक जायेगा।");
+break;
+case "6":
+//{
+$("#result").html("तबादला नहीं होगा।");
+break;
+case "7":
+//{
+$("#result").html("तबादला हो जायेगा।");
+break;
+case "8":
+//{
+$("#result").html("तबादला नहीं हो सकेगा।");
+break;
+case "9":
+//{
+$("#result").html("तबादला होने का योग हैं।");
+break;
+case "10":
+//{
+$("#result").html("तबादला प्रयत्न से होगा।");
+break;
+case "11":
+//{
+$("#result").html("तबादला हो जायेगा।");
+break;
+case "12":
+//{
+$("#result").html("तबादला नहीं होगा।");
+break;
+case "13":
+//{
+$("#result").html("तबादला हो जायेगा।");
+break;
+case "14":
+//{
+$("#result").html("तबादला होने में सन्देह है।");
+break;
+case "15":
+//{
+$("#result").html("व्यापार से लाभ मिलेगा।");
+break;
+case "16":
+//{
+$("#result").html("स्वप्न का फल उत्तम होगा।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==17){		
+switch (cell_Value) {
+case "1"://{
+$("#result").html("व्यापार में सावधानी से लाभ मिले।");
+break;
+case "2":
+//{
+$("#result").html("व्यापार में लाभ होगा।");
+break;
+case "3":
+//{
+$("#result").html("व्यापार से लाभ नहीं होगा।");
+break;
+case "4":
+//{
+$("#result").html("व्यापार में लाभ होगा।");
+break;
+case "5":
+//{
+$("#result").html("व्यापार से लाभ नहीं हो सकेगा।");
+break;
+case "6":
+//{
+$("#result").html("व्यापार से लाभ रहेगा।");
+break;
+case "7":
+//{
+$("#result").html("व्यापार में लाभ मिलना कठिन है।");
+break;
+case "8":
+//{
+$("#result").html("व्यापार से लाभ मिलेगा।");
+break;
+case "9":
+//{
+$("#result").html("व्यापार में लाभ पाना मुश्किल है।");
+break;
+case "10":
+//{
+$("#result").html("व्यापार से लाभ मिलेगा।");
+break;
+case "11":
+//{
+$("#result").html("व्यापार से लाभ मिलना कठिन है।");
+break;
+case "12":
+//{
+$("#result").html("व्यापार से लाभ नहीं मिलेगा।");
+break;
+case "13":
+//{
+$("#result").html("व्यापार में लाभ मिलना कठिन है।");
+break;
+case "14":
+//{
+$("#result").html("चिन्ता अभी दूर नहीं होगी।");
+break;
+case "15":
+//{
+$("#result").html("तबादले की आशा पूरी होगी।");
+break;
+case "16":
+//{
+$("#result").html("व्यापार से हानि होगी।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==18){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("चिन्ता अभी देर से मिटेगी।");
+break;
+case "2":
+//{
+$("#result").html("चिंता शीघ्र ही मिट जायेगी।");
+break;
+case "3":
+//{
+$("#result").html("चिंता हनुमान की पूजा से मिटेगी।");
+break;
+case "4":
+//{
+$("#result").html("चिन्ता शीघ्र दूर होगी।");
+break;
+case "5":
+//{
+$("#result").html("चिन्ता अभी दूर नहीं होगी।");
+break;
+case "6":
+//{
+$("#result").html("चिन्ता सब दूर हो जायेगी।");
+break;
+case "7":
+//{
+$("#result").html("चिन्ता अभी नहीं मिटेगी।");
+break;
+case "8":
+//{
+$("#result").html("चिन्ता मिटेगी, देव-पूजा करो।");
+break;
+case "9":
+//{
+$("#result").html("चिन्ता मिट जायेगी।");
+break;
+case "10":
+//{
+$("#result").html("चिन्ता अभी दूर नहीं होगी।");
+break;
+case "11":
+//{
+$("#result").html("चिन्ता मिट जायेगी।");
+break;
+case "12":
+//{
+$("#result").html("चिन्ता बढ़ जायेगी।");
+break;
+case "13":
+//{
+$("#result").html("मित्र के साथ अच्छी बन जायेगी।");
+break;
+case "14":
+//{
+$("#result").html("व्यापार से लाभ नहीं मिलेगा।");
+break;
+case "15":
+//{
+$("#result").html("चिंता शीघ्र मिट जायेगी।");
+break;
+case "16":
+//{
+$("#result").html("चिंता कुछ समय बाद मिटेगी।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==19){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("मित्र धोखा देगा, सावधान रहना।");
+break;
+case "2":
+//{
+$("#result").html("मित्र से सतर्क रहें।");
+break;
+case "3":
+//{
+$("#result").html("मित्र के साथ नहीं बनेगी।");
+break;
+case "4":
+//{
+$("#result").html("मित्र का साथ अच्छी बन जायेगी।");
+break;
+case "5":
+//{
+$("#result").html("मित्र के साथ नहीं बन सकेगी।");
+break;
+case "6":
+//{
+$("#result").html("मित्र के साथ अच्छा मेल होगा।");
+break;
+case "7":
+//{
+$("#result").html("मित्र से बननी कठिन है।");
+break;
+case "8":
+//{
+$("#result").html("मित्र धोखा देगा, सावधान रहना।");
+break;
+case "9":
+//{
+$("#result").html("मित्र के साथ सावधानी से कार्य करो।");
+break;
+case "10":
+//{
+$("#result").html("मित्र के साथ अच्छी बन जायेगी।");
+break;
+case "11":
+//{
+$("#result").html("मित्र के साथ बनना कठिन है।");
+break;
+case "12":
+//{
+$("#result").html("कर्ज अभी नहीं मिलेगा।");
+break;
+case "13":
+//{
+$("#result").html("चिन्ता शीघ्र दूर होगी।");
+break;
+case "14":
+//{
+$("#result").html("मित्र के साथ नहीं बनेगी।");
+break;
+case "15":
+//{
+$("#result").html("मित्र के साथ अच्छी बन जायेगी।");
+break;
+case "16":
+//{
+$("#result").html("मित्र से बनना मुश्किल है, सावधान।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==20){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("कर्ज तो मिलेगा, किन्तु अभी देर है।");
+break;
+case "2":
+//{
+$("#result").html("कर्ज मिल जायेगा।");
+break;
+case "3":
+//{
+$("#result").html("कर्ज इस समय मिलना मुश्किल है।");
+break;
+case "4":
+//{
+$("#result").html("कर्ज देर से मिलेगा।");
+break;
+case "5":
+//{
+$("#result").html("कर्जा नहीं मिलेगा।");
+break;
+case "6":
+//{
+$("#result").html("कर्ज मिल सकेगा।");
+break;
+case "7":
+//{
+$("#result").html("कर्ज मिलेगा।");
+break;
+case "8":
+//{
+$("#result").html("कर्ज नहीं मिलेगा।");
+break;
+case "9":
+//{
+$("#result").html("कर्ज कठिनाई से मिलेगा।");
+break;
+case "10":
+//{
+$("#result").html("कर्ज नहीं मिलेगा।");
+break;
+case "11":
+//{
+$("#result").html("खोई वस्तु मिलने में सन्देह है।");
+break;
+case "12":
+//{
+$("#result").html("मित्र के साथ नही बनेगी।");
+break;
+case "13":
+//{
+$("#result").html("कर्ज मिल जायेगा।");
+break;
+case "14":
+//{
+$("#result").html("कर्ज मिलने में सन्देह है।");
+break;
+case "15":
+//{
+$("#result").html("कर्ज शीघ्र ही मिल जायेगा।");
+break;
+case "16":
+//{
+$("#result").html("कर्ज कठिनाई से मिलेगा।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==21){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("खोई वस्तु प्रयत्न से मिल सकेगी।");
+break;
+case "2":
+//{
+$("#result").html("खोई वस्तु मिल जायेगी।");
+break;
+case "3":
+//{
+$("#result").html("खोई वस्तु नहीं मिलेगी।");
+break;
+case "4":
+//{
+$("#result").html("खोई वस्तु मिल जायेगी।");
+break;
+case "5":
+//{
+$("#result").html("खोयी वस्तु प्रयत्न से मिलेगी।");
+break;
+case "6":
+//{
+$("#result").html("खोई वस्तु मिलेगी।");
+break;
+case "7":
+//{
+$("#result").html("खोयी वस्तु मिलने में सन्देह है।");
+break;
+case "8":
+//{
+$("#result").html("खोयी वस्तु नहीं मिलेगी।");
+break;
+case "9":
+//{
+$("#result").html("खोई वस्तु मिलने में सन्देह है।");
+break;
+case "10":
+//{
+$("#result").html("परदेशी शीघ्र घर आ जायेगा।");
+break;
+case "11":
+//{
+$("#result").html("कर्ज देर से मिलेगा।");
+break;
+case "12":
+//{
+$("#result").html("खोई वस्तु मिल जायेगी।");
+break;
+case "13":
+//{
+$("#result").html("खोई वस्तु मिलना कठिन है।");
+break;
+case "14":
+//{
+$("#result").html("खोयी वस्तु नहीं मिल सकेगी।");
+break;
+case "15":
+//{
+$("#result").html("खोई वस्तु शीघ्र मिल जायेगी।");
+break;
+case "16":
+//{
+$("#result").html("खोई वस्तु नहीं मिलेगी।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==22){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("परदेशी रास्ते में चल रहा है।");
+break;
+case "2":
+//{
+$("#result").html("परदेशी अभी नहीं आ रहा है।");
+break;
+case "3":
+//{
+$("#result").html("परदेशी शीघ्र ही आ जायेगा।");
+break;
+case "4":
+//{
+$("#result").html("परदेशी अभी नहीं आयेगा।");
+break;
+case "5":
+//{
+$("#result").html("परदेशी शीघ्र ही आ जायेगा।");
+break;
+case "6":
+//{
+$("#result").html("परदेशी बीमार है, अभी नहीं आयेगा।");
+break;
+case "7":
+//{
+$("#result").html("परदेशी लौट रहा है।");
+break;
+case "8":
+//{
+$("#result").html("परदेशी अभी नहीं आयेगा।");
+break;
+case "9":
+//{
+$("#result").html("यात्रा से लाभ नहीं मिलेगा।");
+break;
+case "10":
+//{
+$("#result").html("खोयी वस्तु देर से मिलेगी।");
+break;
+case "11":
+//{
+$("#result").html("परदेशी अभी नहीं आ रहा है।");
+break;
+case "12":
+//{
+$("#result").html("परदेशी अभी नहीं आयेगा।");
+break;
+case "13":
+//{
+$("#result").html("परदेशी आ रहा है।");
+break;
+case "14":
+//{
+$("#result").html("परदेशी शीघ्र ही आयेगा।");
+break;
+case "15":
+//{
+$("#result").html("परदेशी अभी नहीं आ सकता।");
+break;
+case "16":
+//{
+$("#result").html("परदेशी देर से आयेगा। चिन्ता न करें।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==23){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("यात्रा लाभदायी रहेगी।");
+break;
+case "2":
+//{
+$("#result").html("यात्रा से लाभ कम मिले।");
+break;
+case "3":
+//{
+$("#result").html("यात्रा से लाभ नहीं रहेगा।");
+break;
+case "4":
+//{
+$("#result").html("यात्रा में लाभ मिलेगा।");
+break;
+case "5":
+//{
+$("#result").html("यात्रा से लाभ नहीं मिलेगा।");
+break;
+case "6":
+//{
+$("#result").html("यात्रा से लाभ कम है।");
+break;
+case "7":
+//{
+$("#result").html("यात्रा से लाभ रहेगा।");
+break;
+case "8":
+//{
+$("#result").html("भाइयों से बननी मुश्किल है।");
+break;
+case "9":
+//{
+$("#result").html("परदेशी अभी देर से आयेगा।");
+break;
+case "10":
+//{
+$("#result").html("यात्रा से लाभ होगा।");
+break;
+case "11":
+//{
+$("#result").html("यात्रा से लाभ नहीं रहेगा।");
+break;
+case "12":
+//{
+$("#result").html("यात्रा से लाभ मिलेगा।");
+break;
+case "13":
+//{
+$("#result").html("यात्रा से लाभ मिलना कठिन है।");
+break;
+case "14":
+//{
+$("#result").html("१यात्रा से लाभ होगा।");
+break;
+case "15":
+//{
+$("#result").html("यात्रा से लाभ पाना कठिन है।");
+break;
+case "16":
+//{
+$("#result").html("यात्रा से लाभ मिलेगा।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==24){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("भाइयों में बननी मुश्किल है।");
+break;
+case "2":
+//{
+$("#result").html("भाइयों में अच्छी बन जायेगी।");
+break;
+case "3":
+//{
+$("#result").html("भाइयों से नहीं बनेगी।");
+break;
+case "4":
+//{
+$("#result").html("भाइयों में अच्छी बन जायेगी।");
+break;
+case "5":
+//{
+$("#result").html("भाइयों से बिगाड़ होगा।");
+break;
+case "6":
+//{
+$("#result").html("भाइयों से मेल-मिलाप रहेगा।");
+break;
+case "7":
+//{
+$("#result").html("भाइयों से अनबन रहेगी।");
+break;
+case "8":
+//{
+$("#result").html("भाइयों से बननी मुश्किल है।");
+break;
+case "9":
+//{
+$("#result").html("भाइयों में साधारण मेल रहेगा।");
+break;
+case "10":
+//{
+$("#result").html("भाइयों में मेल कम रहेगा।");
+break;
+case "11":
+//{
+$("#result").html("भाइयों से नहीं बनेगी।");
+break;
+case "12":
+//{
+$("#result").html("भाइयों में अच्छी बन जाएगी।");
+break;
+case "13":
+//{
+$("#result").html("भाइयों में बननी बहुत कठिन है।");
+break;
+case "14":
+//{
+$("#result").html("भाइयों से नहीं बनेगी।");
+break;
+case "15":
+//{
+$("#result").html("भाइयों से बननी कठिन है।");
+break;
+case "16":
+//{
+$("#result").html("भाइयों से अच्छा मेल रहेगा।</td>");
+break;
+
+default:
+$("#result").html("how"); 
+}} else if (card_Value==25){		
+switch (cell_Value) {
+ case "1":
+//{
+$("#result").html("कूप-निर्माण की कामना पूरी होगी।");
+break;
+case "2":
+//{
+$("#result").html("कुआं बन जायेगा।");
+break;
+case "3":
+//{
+$("#result").html("कुआं नहीं बन सकेगा।");
+break;
+case "4":
+//{
+$("#result").html("कुआं बन जायेगा।");
+break;
+case "5":
+//{
+$("#result").html("कुआं बनने में रुकावटें ज्यादा है।");
+break;
+case "6":
+//{
+$("#result").html("कुआं बन जायेगा।");
+break;
+case "7":
+//{
+$("#result").html("कुआं बनाने में अचानक बाधा पड़े।");
+break;
+case "8":
+//{
+$("#result").html("कूप-निर्माण की कामना पूरी होगी।");
+break;
+case "9":
+//{
+$("#result").html("कूप अभी देरी से बनेगा।");
+break;
+case "10":
+//{
+$("#result").html("कूप-निर्माण की आशा शीघ्र पूरी होगी।");
+break;
+case "11":
+//{
+$("#result").html("कूप-निर्माण नहीं होगा।");
+break;
+case "12":
+//{
+$("#result").html("कूप-निर्माण की आशा पूरी होगा।");
+break;
+case "13":
+//{
+$("#result").html("कूप-निर्माण नहीं होगा।");
+break;
+case "14":
+//{
+$("#result").html("कूप-निर्माण की आशा पूरी होगी।");
+break;
+case "15":
+//{
+$("#result").html("कूप-निर्माण देरी से होगा।");
+break;
+case "16":
+//{
+$("#result").html("कूप-निर्माण की आशा पूरी होगी।</td>");
+break;
+
+default:
+$("#result").html("how"); 
+}} else if (card_Value==26){		
+switch (cell_Value) {
+ case "1":
+//{
+$("#result").html("यह वर्ष मध्यम रहेगा।");
+break;
+case "2":
+//{
+$("#result").html("यह वर्ष अच्छा रहेगा।");
+break;
+case "3":
+//{
+$("#result").html("यह वर्ष उत्तम है।");
+break;
+case "4":
+//{
+$("#result").html("यह वर्ष उत्तम रहेगा।");
+break;
+case "5":
+//{
+$("#result").html("यह वर्ष अच्छा रहेगा।");
+break;
+case "6":
+//{
+$("#result").html("यह वर्ष उत्तम रहेगा।");
+break;
+case "7":
+//{
+$("#result").html("यह वर्ष मध्यम रहेगा।");
+break;
+case "8":
+//{
+$("#result").html("यह वर्ष अच्छा नहीं रहेगा।");
+break;
+case "9":
+//{
+$("#result").html("यह वर्ष मध्यम है।");
+break;
+case "10":
+//{
+$("#result").html("यह वर्ष उत्तम है।");
+break;
+case "11":
+//{
+$("#result").html("यह वर्ष उत्तम नहीं है।");
+break;
+case "12":
+//{
+$("#result").html("यह वर्ष शुभ रहेगा।");
+break;
+case "13":
+//{
+$("#result").html("यह वर्ष उत्तम नहीं बितेगा।");
+break;
+case "14":
+//{
+$("#result").html("यह वर्ष कठिनाई के साथ बीतेगा।");
+break;
+case "15":
+//{
+$("#result").html("यह वर्ष उत्तम है।");
+break;
+case "16":
+//{
+$("#result").html("यह वर्ष मध्यम रहेगा।</td>");
+break;
+
+default:
+$("#result").html("how"); 
+}} else if (card_Value==27){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("दिन शुभ नहीम है।");
+break;
+case "2":
+//{
+$("#result").html("दिन शुभ है।");
+break;
+case "3":
+//{
+$("#result").html("दिन मध्यम रहेगा।");
+break;
+case "4":
+//{
+$("#result").html("दिन शुभ रहेगा।");
+break;
+case "5":
+//{
+$("#result").html("दिन मध्यम रहेगा।");
+break;
+case "6":
+//{
+$("#result").html("दिन शुभ नहीं है।");
+break;
+case "7":
+//{
+$("#result").html("दिन शुभ रहेगा।");
+break;
+case "8":
+//{
+$("#result").html("दिन शुभ नहीं है।");
+break;
+case "9":
+//{
+$("#result").html("दिन मध्यम रहेगा।");
+break;
+case "10":
+//{
+$("#result").html("दिन शुभ रहेगा।");
+break;
+case "11":
+//{
+$("#result").html("दिन शुभ नहीं रहेगा।");
+break;
+case "12":
+//{
+$("#result").html("दिन शुभ है।");
+break;
+case "13":
+//{
+$("#result").html("दिन मध्यम है।");
+break;
+case "14":
+//{
+$("#result").html("दिन उत्तम है।");
+break;
+case "15":
+//{
+$("#result").html("दिन अच्छा नहीं है।");
+break;
+case "16":
+//{
+$("#result").html("दिन शुभ है।</td>");
+break;
+
+default:
+$("#result").html("how"); 
+}} else if (card_Value==28){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("पुत्र होगा।");
+break;
+case "2":
+//{
+$("#result").html("कन्या होगी।");
+break;
+case "3":
+//{
+$("#result").html("पुत्र होगा।");
+break;
+case "4":
+//{
+$("#result").html("कन्या होगी।");
+break;
+case "5":
+//{
+$("#result").html("पुत्र होगा।");
+break;
+case "6":
+//{
+$("#result").html("कन्या होगी।");
+break;
+case "7":
+//{
+$("#result").html("पुत्र होगा।");
+break;
+case "8":
+//{
+$("#result").html("कन्या होगी।");
+break;
+case "9":
+//{
+$("#result").html("पुत्र होगा।");
+break;
+case "10":
+//{
+$("#result").html("कन्या होगी।");
+break;
+case "11":
+//{
+$("#result").html("पुत्र होगा।");
+break;
+case "12":
+//{
+$("#result").html("कन्या होगी।");
+break;
+case "13":
+//{
+$("#result").html("पुत्र होगा।");
+break;
+case "14":
+//{
+$("#result").html("कन्या होगी।");
+break;
+case "15":
+//{
+$("#result").html("पुत्र होगा।");
+break;
+case "16":
+//{
+$("#result").html("कन्या होगी।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==29){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("इच्छा देर से पूरी होगी।");
+break;
+case "2":
+//{
+$("#result").html("इच्छा पूरी होगी।");
+break;
+case "3":
+//{
+$("#result").html("इच्छा पूरी होने में सन्देह है।");
+break;
+case "4":
+//{
+$("#result").html("इच्छा पूरी होगी।");
+break;
+case "5":
+//{
+$("#result").html("इच्छा पूरी होने में देर है।");
+break;
+case "6":
+//{
+$("#result").html("इच्छा पूरी होगी।");
+break;
+case "7":
+//{
+$("#result").html("इच्छा पूरी होने में देरी है।");
+break;
+case "8":
+//{
+$("#result").html("इच्छा पूरी नहीं हो सकेगी।");
+break;
+case "9":
+//{
+$("#result").html("इच्छा पूरी होने में सन्देह है।");
+break;
+case "10":
+//{
+$("#result").html("इच्छा पूरी होगी।");
+break;
+case "11":
+//{
+$("#result").html("इच्छा पूरी होने में सन्देह है।");
+break;
+case "12":
+//{
+$("#result").html("इच्छा पूरी नहीं हो सकेगी।");
+break;
+case "13":
+//{
+$("#result").html("इच्छा पूरी होगी।");
+break;
+case "14":
+//{
+$("#result").html("इच्छा पूरी नहीं होगी।");
+break;
+case "15":
+//{
+$("#result").html("इच्छा पूरी होने में सन्देह है।");
+break;
+case "16":
+//{
+$("#result").html("इच्छा पूरी होगी।</td>");
+break;
+
+default:
+$("#result").html("how"); 
+}} else if (card_Value==30){		
+switch (cell_Value) { 
+case "1":
+//{
+$("#result").html("स्त्री सरल स्वभाव की मिलेगी।");
+break;
+case "2":
+//{
+$("#result").html("स्त्री तेज स्वभाव की मिलेगी।");
+break;
+case "3":
+//{
+$("#result").html("स्त्री सरल स्वभाव की मिलेगी।");
+break;
+case "4":
+//{
+$("#result").html("स्त्री अच्छे स्वभाव की नहीं मिलेगी।");
+break;
+case "5":
+//{
+$("#result").html("स्त्री उत्तम स्वभाव की मिलेगी।");
+break;
+case "6":
+//{
+$("#result").html("स्त्री का स्वभाव गरम रहेगा।");
+break;
+case "7":
+//{
+$("#result").html("स्त्री का स्वभाव सरल रहेगा।");
+break;
+case "8":
+//{
+$("#result").html("स्त्री का स्वभाव उत्तम होगा।");
+break;
+case "9":
+//{
+$("#result").html("स्त्री के स्वभाव से मेल मिल जायेगा।");
+break;
+case "10":
+//{
+$("#result").html("स्त्री का स्वभाव अच्छा रहेगा।");
+break;
+case "11":
+//{
+$("#result").html("स्त्री का स्वभाव अच्छा नहीं होगा।");
+break;
+case "12":
+//{
+$("#result").html("स्त्री का स्वभाव कुछ चिड़चिड़ा है।");
+break;
+case "13":
+//{
+$("#result").html("स्त्री का स्वभाव उत्तम रहेगा।");
+break;
+case "14":
+//{
+$("#result").html("स्त्री का स्वभाव अच्छा नहीं है।");
+break;
+case "15":
+//{
+$("#result").html("स्त्री उत्तम स्वभाव की मिलेगी।");
+break;
+case "1	5":
+//{
+$("#result").html("स्त्री का स्वभाव मिलनसार होगा।</td>");
+break;
+
+default:
+$("#result").html("how"); 
+}} else if (card_Value==31){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("सम्बन्धी धोखा नहीं देगा।");
+break;
+case "2":
+//{
+$("#result").html("सम्बन्धी से धोखे की उम्मीद कम है।");
+break;
+case "3":
+//{
+$("#result").html("सम्बन्धी धोखा दे सकता है।");
+break;
+case "4":
+//{
+$("#result").html("सम्बन्धी धोखा नहीं देगा।");
+break;
+case "5":
+//{
+$("#result").html("सम्बन्धी धोखा दे सकता है।");
+break;
+case "6":
+//{
+$("#result").html("सम्बन्धी धोखा दे सकता है।");
+break;
+case "7":
+//{
+$("#result").html("सम्बन्धी धोखा नहीं देगा।");
+break;
+case "8":
+//{
+$("#result").html("सम्बन्धी धोखा देगा। सावधान।");
+break;
+case "9":
+//{
+$("#result").html("सम्बन्धी गुप्त चाल चलेगा।");
+break;
+case "10":
+//{
+$("#result").html("सम्बन्धी धोखा नहीं देगा।");
+break;
+case "11":
+//{
+$("#result").html("सम्बन्धी धोखा देने में नहीं चूकेगा।");
+break;
+case "12":
+//{
+$("#result").html("सम्बन्धी धोखा नहीं देगा।");
+break;
+case "13":
+//{
+$("#result").html("सम्बन्धी धोखा देगा। सावधान।");
+break;
+case "14":
+//{
+$("#result").html("सम्बन्धी धोखा नहीं देगा।");
+break;
+case "15":
+//{
+$("#result").html("सम्बन्धी का धोखा देना कठिन है।");
+break;
+case "16":
+//{
+$("#result").html("सम्बन्धी धोखा नहीं देगा।</td>");
+break;
+
+default:
+$("#result").html("how"); 
+}} else if (card_Value==32){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("गुप्त-प्रेम करती है।");
+break;
+case "2":
+//{
+$("#result").html("शुद्ध प्रेम करती है।");
+break;
+case "3":
+//{
+$("#result").html("प्रेम नहीं करती है।");
+break;
+case "4":
+//{
+$("#result").html("शुद्ध प्रेम करती है।");
+break;
+case "5":
+//{
+$("#result").html("इस समय वह प्रेम नहीं करती है।");
+break;
+case "6":
+//{
+$("#result").html("गुप्त-प्रेम करती है।");
+break;
+case "7":
+//{
+$("#result").html("प्रेम करती है।");
+break;
+case "8":
+//{
+$("#result").html("प्रेम नहीं करती, दिखावटी प्रेम है।");
+break;
+case "9":
+//{
+$("#result").html("प्रेम का दिखावा ही अच्छा है।");
+break;
+case "10":
+//{
+$("#result").html("प्रेम करती है।");
+break;
+case "11":
+//{
+$("#result").html("प्रेम दिखावटी है।");
+break;
+case "12":
+//{
+$("#result").html("प्रेम का चक्कर हानिकारक है।");
+break;
+case "13":
+//{
+$("#result").html("शुद्ध प्रेम करती है।");
+break;
+case "14":
+//{
+$("#result").html("गुप्त-प्रेम करती है।");
+break;
+case "15":
+//{
+$("#result").html("दिखावटी प्रेम करती है।");
+break;
+case "16":
+//{
+$("#result").html("शुद्ध प्रेम करती है।</td>");
+break;
+default:
+$("#result").html("how"); 
+}} else if (card_Value==33){		
+switch (cell_Value) {
+ case "1":
+//{
+$("#result").html("तीर्थ-यात्रा अभी नहीं हो सकेगी।");
+break;
+case "2":
+//{
+$("#result").html("तीर्थ-यात्रा कर सकोगे।");
+break;
+case "3":
+//{
+$("#result").html("तीर्थ यात्रा में विघ्न पड़ेगा।");
+break;
+case "4":
+//{
+$("#result").html("तीर्थ यात्रा की आशा पूरी होगी।");
+break;
+case "5":
+//{
+$("#result").html("तीर्थ-यात्रा नहीं होगी।");
+break;
+case "6":
+//{
+$("#result").html("तीर्थ-यात्रा नहीं होगी।");
+break;
+case "7":
+//{
+$("#result").html("तीर्थ-यात्रा कर सकोगे।");
+break;
+case "8":
+//{
+$("#result").html("तीर्थ-यात्रा होने में सन्देह है।");
+break;
+case "9":
+//{
+$("#result").html("विघ्न के कारण तीर्थ-यात्रा नहीं होगी।");
+break;
+case "10":
+//{
+$("#result").html("तीर्थ-यात्रा सकुशल होगी।");
+break;
+case "11":
+//{
+$("#result").html("तीर्थ-यात्रा नहीं कर सकोगे।");
+break;
+case "12":
+//{
+$("#result").html("तीर्थयात्रा की आशा पूरी नहीं होगी।");
+break;
+case "13":
+//{
+$("#result").html("तीर्थ-यात्रा कर सकोगे।");
+break;
+case "14":
+//{
+$("#result").html("तीर्थ-यात्रा नहीं हो सकेगी।");
+break;
+case "15":
+//{
+$("#result").html("तीर्थ-यात्रा नहीं हो सकेगी।");
+break;
+case "16":
+//{
+$("#result").html("तीर्थ-यात्रा की आशा पूरी होगी।</td>");
+break;
+
+default:
+$("#result").html("how"); 
+}} else if (card_Value==34){		
+switch (cell_Value) {
+case "1":
+//{
+$("#result").html("मन्दिर बनवाने की आशा पूरी होगी।");
+break;
+case "2":
+//{
+$("#result").html("किसी की सहायता से मन्दिर बनेगा।");
+break;
+case "3":
+//{
+$("#result").html("मन्दिर अभी नहीं बनेगा।");
+break;
+case "4":
+//{
+$("#result").html("मन्दिर बनाने की आशा पूरी होगी।");
+break;
+case "5":
+//{
+$("#result").html("मन्दिर नहीं बन सकेगा।");
+break;
+case "6":
+//{
+$("#result").html("मन्दिर की आशा पूरी होगी।");
+break;
+case "7":
+//{
+$("#result").html("मन्दिर मित्र की सहायता से बनेगा।");
+break;
+case "8":
+//{
+$("#result").html("मन्दिर बनाने की कामना पूरी होगी।");
+break;
+case "9":
+//{
+$("#result").html("मन्दिर-निर्माण देर से होगा।");
+break;
+case "10":
+//{
+$("#result").html("मन्दिर नहीं बन सकेगा।");
+break;
+case "11":
+//{
+$("#result").html("मन्दिर अभी नहीं बनेगा।");
+break;
+case "12":
+//{
+$("#result").html("मन्दिर-निर्माण की कामना पूरी होगी।");
+break;
+case "13":
+//{
+$("#result").html("मन्दिर अभी नहीं बन पायेगा।");
+break;
+case "14":
+//{
+$("#result").html("मन्दिर अभी नहीं बनेगा।");
+break;
+case "15":
+//{
+$("#result").html("मन्दिर-निर्माण शीघ्र होगा।");
+break;
+case "16":
+//{
+$("#result").html("मन्दिर अभी नहीं बनेगा।</td>");
+break;
+$("#result").html("TRY");
+ }	}
+else {
+$("#result").html("RETRY");
+   }} );
+	})
+	function goBack() {
+  window.history.back();
+}
+$window.location.reload();
+sessionStorage.clear();
+//else {{$("#result").html("RETRY");
+
+//		}	});
+//    });
+//	function goBack() {
+//  window.history.back();
+// }
+$window.location.reload();
+sessionStorage.clear();
+// window.history.back();	
+//if {card_Value==1&&cell_Value==8}
+
+    </script>
+</head>
+
+<div id="result" style="text-align:left" ;></div>
+<table id="myTable" border="1" style="border-collapse: collapse;text-align:center; cellpadding=" 8
+";>
+<div style="overflow-x : auto;  overflow-y : auto; display: block;"></div>
+<table id="myTable" border="1" align="center" style="border-collapse: collapse; cellpadding=" 0
+";max-width:device-width; min-width:1vw;opacity : 0 ;class: responsive;table-layout : fixed
+;font-size: calc (0.75em + 1vmin); display: block;">
+
+<!--1st ROW-->
+<tr>
+    <td>7</td>
+    <td>12</td>
+    <td>1</td>
+    <td>14</td>
+
+</tr>
+
+<!--2nd ROW-->
+<tr>
+    <td>2</td>
+    <td>13</td>
+    <td>8</td>
+    <td>11</td>
+
+</tr>
+
+<!--3rd ROW-->
+<tr>
+    <td>16</td>
+    <td>3</td>
+    <td>10</td>
+    <td>5</td>
+
+</tr>
+
+<!--4th ROW-->
+<tr>
+    <td>9</td>
+    <td>6</td>
+    <td>15</td>
+    <td>4</td>
+
+</tr>
+
+</table>
+<div class="center">
+    <button onclick="goBack()">Go Back</button>
+
+</div>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type='text/css'>
+

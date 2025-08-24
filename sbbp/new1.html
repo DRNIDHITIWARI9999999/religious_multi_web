@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <link rel=\"manifest\" href=\"/sbbp/manifest.json\">
+  <base href=\"/sbbp/\">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans" type='text/css'>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: PowderBlue;
+        }
+
+        .try {
+            margin-left: 0%;
+        }
+        /* Float four columns side by side */
+        .column {
+            float: left;
+            width: 25%;
+            padding: 0 10px;
+            margin-bottom: 20px;
+            height: 100px;
+        }
+        /* Responsive columns */
+        @media screen and (max-width: 600px) {
+            .column {
+                float: left;
+                width: 50%;
+                display: block;
+                padding: 0 10px;
+                margin-bottom: 10px;
+                height: 100px;
+            }
+        }
+
+        /* Remove extra left and right margins, due to padding */
+        .row {
+            margin: 0 -5px;
+        }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+        /* Responsive columns */
+
+
+        /* Style the counter cards */
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 7px;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-Medium" style="z-index:3;width:10%; min-width:100px; font-weight:bold;opacity:1;" id="mySidebar">
+        <br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%; font-size: calc(0.75em + 1vmin);">CLOSE</a>
+        <div class="w3-container">
+            <h3 class="w3-padding-32 w3-medium font-size: calc(0.75em + 1vmin);"><b>Shree Bhairav Baba Prashnavali</b></h3>
+        </div>
+        <div class="w3-bar-block ">
+            <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+            <a href="New1.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Questions</a>
+            <a href="table3202.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Shree Batteesa Yantra</a>
+            <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a>
+            <a href="How.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">How To</a>
+            <!--  <a href="Support.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Support Us</a> -->
+            <a href="Contac.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-blue w3-Medium">
+        <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">☰</a>
+        <span>SHREE BHAIRAV BABA PRASHNAVALI</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div id="main">
+
+        <div class="w3-main" style="margin-left:340px;margin-right:40px;margin-top:25px;">
+            <div class="w3-row-padding">
+                <div class="w3-half" style="margin-top:34px;">
+                </div>
+            </div>
+        </div>
+
+        <h2 style="color:blue; text-align:center; border-bottom:double 3px;"> GAN GANPATYE NAMAH </h2>
+        <p style="color:Blue; text-align:center;border-bottom:double 3px; "> SHREE BHAIRAV BABA PRASHNAVALI </p>
+        <div class="try">
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=1   ;location.href='table32.html';" type="button">  Will I Have Children ?  </button></p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=2   ;location.href='table32.html';" type="button">Will I Win or Lose The Court Case ? </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=3   ;location.href='table32.html';" type="button">When My Good Time Will Start ?</button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=4   ;location.href='table32.html';" type="button">Will I Get a Job ? </button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=5   ;location.href='table32.html';" type="button">Will I Get Opportunities for Advancement in Life ? </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=6   ;location.href='table32.html';" type="button">Is Agriculture Profitable Occupation for Me  ?  </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=7   ;location.href='table32.html';" type="button">Will I Have My Own House ? </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=8   ;location.href='table32.html';" type="button">Will I Get Success in The Examination ? </button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=9   ;location.href='table32.html';" type="button">Will My Education Benefit Me In My Occupation ? </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=10   ;location.href='table32.html';" type="button">Will I Get Success In Life ?  </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=11   ;location.href='table32.html';" type="button">Will I Get Easy Money ?</button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=12   ;location.href='table32.html';" type="button">Will I Get Married Ever ?  </button></p>
+                    </div>
+                </div>
+            </div><div class="row">
+                <div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=13   ;location.href='table32.html';" type="button">Whether He/She Will Get Well and Discharged from The Hospital Soon ?   </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=14   ;location.href='table32.html';" type="button">What is the Meaning of My Dream ? </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=15   ;location.href='table32.html';" type="button">Will I Get Transfer From My Current Place of Posting ?  </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=16   ;location.href='table32.html';" type="button">Will Starting a Business Will Be Profitable For Me ? </button></p>
+                    </div>
+                </div>
+            </div>  <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=1   ;location.href='table32.html';" type="button">Will My Worries Get Over ?  </button></p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=2   ;location.href='table32.html';" type="button">How Will Be My Friendship With Particular Friend ? </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=3   ;location.href='table32.html';" type="button">Will I Get Loan ?  </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=4   ;location.href='table32.html';" type="button">Will I Find My Lost Article ?  </button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=5   ;location.href='table32.html';" type="button">Will A Lost Relation Will Come Back In The Life ?  </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=6   ;location.href='table32.html';" type="button">Will The Journey Will Be A Beneficial For Me ?  </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=7   ;location.href='table32.html';" type="button">How Will Be My Relation With My Brother ?  </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=8   ;location.href='table32.html';" type="button">Will The Scarcity of Potable Water Will Get Solve ?  </button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=9   ;location.href='table32.html';" type="button">How Will Be This Year For Me ?  </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=10   ;location.href='table32.html';" type="button">How Will Be The Day For Me ?  </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=11   ;location.href='table32.html';" type="button">Will The Particular Lady Will Give Birth To A Boy or Girl Child ?  </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=12   ;location.href='table32.html';" type="button">Will My Wish Get Fulfilled ?  </button></p>
+                    </div>
+                </div>
+            </div><div class="row">
+                <div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=13   ;location.href='table32.html';" type="button">How Will Be My Life Partner ? </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=14   ;location.href='table32.html';" type="button">Will My Relative Betray Me ?  </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=15   ;location.href='table32.html';" type="button">Is My Partner Cheating On Me ?  </button></p>
+                    </div>
+                </div><div class="column">
+                    <div class="card">
+                        <p><button onclick="sessionStorage.cardvalue=16   ;location.href='table32.html';" type="button">Will I Ever Visit Foreign Country ? </button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>if('serviceWorker'in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
+</body>
+<script>
+    // Script to open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+        document.getElementById("main").style.marginLeft = "100px";
+        document.getElementById("main").style.marginLeft = "10%";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+        document.getElementById("main").style.marginLeft = "0px";
+
+    }
+
+    // Modal Image Gallery
+    function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+    }
+</script>
+
+<script type="text/javascript" src="Toast.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script><script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+</html>

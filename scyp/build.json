@@ -1,0 +1,11 @@
+{
+  "android": {
+    "release": {
+      "keystore": "c:\Program Files\Java\jdk1.8.0_301\bin\nidhisbinary.keystore",
+      "storePassword": "Premolor45",
+      "alias": "nidhisbinary_alias",
+      "password": "Premolor45",
+      "keystoreType": ""
+    }
+  }
+}

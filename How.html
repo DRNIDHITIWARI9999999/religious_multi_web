@@ -1,0 +1,87 @@
+ <!DOCTYPE html>
+<html>
+
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"  type='text/css'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans"  type='text/css'>
+<style>
+    body, h1, h2, h3, h4, h5 {
+        font-family: "Poppins", sans-serif
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+          
+</style>
+<body>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-Medium" style="z-index:3;width:20%; min-width:100px; font-weight:bold;opacity:1;" id="mySidebar">
+        <br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%; font-size: calc(0.75em + 1vmin);">CLOSE</a>
+        <div class="w3-container">
+            <h3 class="w3-padding-32 w3-medium font-size: calc(0.75em + 1vmin);"><b>SHREE RAM SHALAKA</b></h3>
+        </div>
+        <div class="w3-bar-block ">
+            <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+            <a href="Shalaka.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Shalaka</a>
+            <a href="About.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a>
+            <a href="ShalakaT.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Original Shalaka</a>
+			<a href="How.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">How To</a>
+            <a href="Support.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Support Us</a>
+            <a href="Contac.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-red w3-Medium">
+  <link rel=\"manifest\" href=\"/manifest.json\">
+        <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+        <span>SHREE RAM SHALAKA</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+<body>
+
+  <div class="w3-container" id="How" style="margin-top:25px; color:darkblue">
+  <h1 style="text-decoration:underline;color:darkred;" class="w3-xxxlarge"><b>How To Use</b></h1>
+   <p style="color:darkblue; text-align:justify"> The best way to seek guidance from Shri Ram Shalaka, is to close eyes, think of the question, remember the Lord Rama and touch anywhere in the Matrix.</p>
+    <p style="color:darkblue; text-align:justify"> To aide the users to achieve a clear mind and seek guidance with open eyes, the Matrix in the app is covered with a hypnotic wheel, <br> <b> Simply Gaze The Wheel For 30 Seconds Think About Question, Remember The Lord RAMA And Touch Anywhere In The Matrix.
+ </b>  </br>
+    
+  </div>
+	        <script>
+            // Script to open and close sidebar
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("myOverlay").style.display = "block";
+                document.getElementById("main").style.marginLeft = "100px";
+
+            }
+
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("myOverlay").style.display = "none";
+                document.getElementById("main").style.marginLeft = "0px";
+
+            }
+
+            // Modal Image Gallery
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+                var captionText = document.getElementById("caption");
+                captionText.innerHTML = element.alt;
+            }
+        </script>
+ 
