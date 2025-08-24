@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Religious Apps — Embed</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <style>
+    html, body { height: 100%; }
+    body { margin:0; font-size:14px; overflow:hidden; }
+    .grid {
+      margin:0; padding:8px 10px; gap:12px;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+    .nav, .hero, .footer { display:none !important; }
+    .card { padding:12px; border-radius:12px; }
+    .card p { display:none; }
+    .btn { padding:10px 12px; }
+  </style>
+</head>
+<body>
+  <section class="grid">
+    <div class="card"><h3>Shree Ram Shalaka</h3><a class="btn" href="/Shalaka.html" target="_blank" rel="noopener">Open</a></div>
+    <div class="card"><h3>SBBP</h3><a class="btn" href="/sbbp/" target="_blank" rel="noopener">Open</a></div>
+    <div class="card"><h3>SCYP</h3><a class="btn" href="/scyp/" target="_blank" rel="noopener">Open</a></div>
+    <div class="card"><h3>SVC</h3><a class="btn" href="/svc/"  target="_blank" rel="noopener">Open</a></div>
+  </section>
+  <script>if('serviceWorker'in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
+</body>
+</html>
