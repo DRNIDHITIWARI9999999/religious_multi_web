@@ -7,7 +7,19 @@
 <link rel="icon" href="/favicon.ico"><link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/styles.css"></head>
+<link rel="stylesheet" href="/assets/styles.css">
+<style>
+  /* Compact embed mode */
+  body.embed { overflow: hidden; font-size: 14px; }
+  body.embed .nav, body.embed .hero, body.embed .footer { display: none !important; }
+  body.embed .grid {
+    margin: 0; padding: 8px 10px; gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* fits 799px width */
+  }
+  body.embed .card { padding: 12px; border-radius: 12px; }
+  body.embed .card p { display: none; }  /* hide descriptions to save height */
+  body.embed .btn { padding: 10px 12px; }
+</style></head>
 <body>
 <nav class="nav"><div class="brand">Religious Apps</div><div style="display:flex;gap:14px;align-items:center"><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a><button id="mode" class="toggle" aria-label="Toggle theme">🌗</button></div></nav>
 <section class="hero"><div><h1>Open your spiritual apps right in the browser.</h1><p>Shree Ram Shalaka, SBBP, SCYP and SVC — fast, installable PWAs.</p><div class="cta"><a class="btn" href="/Shalaka.html">Open Shalaka</a><a class="btn alt" href="/apps.html">See all apps</a></div></div><div><div class="card"><b>Install Tip</b><p>On mobile Chrome, tap the ⋮ menu → <i>Add to Home screen</i> to install.</p><p style="margin-top:6px">Works offline after first load.</p></div></div></section>
@@ -19,4 +31,10 @@
 </section>
 <footer class="footer">© Dr Nidhi Tiwari • Built with care • <a href="/sitemap.xml">Sitemap</a></footer>
 <script>const modeBtn=document.getElementById('mode');const saved=localStorage.getItem('theme');if(saved==='light')document.body.classList.add('light');modeBtn.addEventListener('click',()=>{document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');});if('serviceWorker'in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}</script>
-</body></html>
+<script>
+  // Enable compact layout when URL has ?embed=1
+  (function () {
+    const qp = new URLSearchParams(location.search);
+    if (qp.get('embed') === '1') document.body.classList.add('embed');
+  })();
+</script></body></html>
